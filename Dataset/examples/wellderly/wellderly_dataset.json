@@ -1,0 +1,18 @@
+{
+ "@context": "http://schema.biothings.io/",
+ "@type": "Dataset",
+ "publisher": {
+   "@type": "schema:Organization",
+   "name": "Scripps Research"
+ },
+ "author": {
+   "@type": "schema:Person",
+   "name": "Ali Torkamani"
+ },
+ "name": "Wellderly Dataset from Scripps CTSA center",
+ "url": "https://www.stsiweb.org/translational-research/genomic-medicine/wellderly/",
+ "datePublished": "2016-04-16T19:00:14",
+ "dateModified": "2018-06-27T21:52:26",
+ "keywords": "genomics, healthy, aging, elderly",
+ "description": "An eight-year-long accrual and analysis of the whole genome sequences of healthy elderly people, or “Wellderly,” has revealed a higher-than-normal presence of genetic variants offering protection from cognitive decline...",
+}
