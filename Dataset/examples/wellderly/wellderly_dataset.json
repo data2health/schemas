@@ -1,18 +1,37 @@
 {
- "@context": "http://schema.biothings.io/",
- "@type": "Dataset",
- "publisher": {
-   "@type": "schema:Organization",
-   "name": "Scripps Research"
- },
- "author": {
-   "@type": "schema:Person",
-   "name": "Ali Torkamani"
- },
- "name": "Wellderly Dataset from Scripps CTSA center",
- "url": "https://www.stsiweb.org/translational-research/genomic-medicine/wellderly/",
- "datePublished": "2016-04-16T19:00:14",
- "dateModified": "2018-06-27T21:52:26",
- "keywords": "genomics, healthy, aging, elderly",
- "description": "An eight-year-long accrual and analysis of the whole genome sequences of healthy elderly people, or “Wellderly,” has revealed a higher-than-normal presence of genetic variants offering protection from cognitive decline...",
+  "@context": "http://schema.org/",
+  "@type": "Dataset",
+  "identifier": "https://www.scripps.edu/science-and-medicine/translational-institute/translational-research/genomic-medicine/wellderly/",
+  "name": "Wellderly Dataset from Scripps CTSA center",
+  "description": "An eight-year-long accrual and analysis of the whole genome sequences of healthy elderly people, or “Wellderly,” has revealed a higher-than-normal presence of genetic variants offering protection from cognitive decline...",
+  "citation": "Galina A. Erikson, Dale L. Bodian, Manuel Rueda, Bhuvan Molparia, Erick R. Scott, Ashley A. Scott-Van Zeeland, Sarah E. Topol, Nathan E. Wineinger, John E. Niederhuber, Eric J. Topol, Ali Torkamani, Whole-Genome Sequencing of a Healthy Aging Cohort, Cell, Volume 165, Issue 4, 2016, Pages 1002-1011, ISSN 0092-8674, https://doi.org/10.1016/j.cell.2016.03.022.",
+  "keywords": [
+    "genomics",
+    "healthy",
+    "aging",
+    "elderly"
+  ],
+  "url": "https://www.scripps.edu/science-and-medicine/translational-institute/translational-research/genomic-medicine/wellderly/",
+  "version": "0.4",
+  "datePublished": "2016-04-16T19:00:14",
+  "dateModified": "2018-06-27T21:52:26",
+  "license": {
+    "@type": "Dataset",
+    "text": "CC0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "Sameas": "https://www.ebi.ac.uk/ega/studies/EGAS00001002306",
+  "publisher": {
+    "@type": "schema:Organization",
+    "name": "Scripps Research"
+  },
+  "author": {
+    "@type": "schema:Person",
+    "name": "Ali Torkamani"
+  },
+  "includedInDataCatalog": {
+    "@type": "DataCatalog",
+    "name": "CTSA Datasets",
+    "url": "https://ctsa.ncats.nih.gov/cd2h/"
+  }
 }
