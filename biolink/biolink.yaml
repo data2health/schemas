@@ -1,0 +1,84 @@
+---
+"@context":
+  dct: "http://purl.org/dc/terms/"
+  owl: "http://www.w3.org/2002/07/owl#"
+  rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  rdfa: "http://www.w3.org/ns/rdfa#"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+  schema: "http://schema.org/"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  hls: "http://health-lifesci.schema.org/"
+  bsc: "http://bioschemas.org/"
+  bts: "http://schema.biothings.io/"
+
+"@graph":
+
+- "@id": bts:BiologicalEntity
+  "@type": rdfs:Class
+  rdfs:comment: none
+  rdfs:label: BiologicalEntity
+  rdfs:subClassOf:
+    "@id": schema:Thing
+  schema:isPartOf:
+    "@id": http://schema.biothings.io
+
+- "@id": bts:DiseaseOrPhenotypicFeature
+  "@type": rdfs:Class
+  rdfs:comment:  Either one of a disease or an individual phenotypic feature.
+  rdfs:label: DiseaseOrPhenotypicFeature
+  rdfs:subClassOf:
+    "@id": schema: BiologicalEntity
+  schema:isPartOf:
+    "@id": http://schema.biothings.io
+
+- "@id": bts:Disease
+  "@type": rdfs:Class
+  rdfs:comment: a disorder of structure or function in a human, animal, or plant, especially one that produces specific signs or symptoms or that affects a specific location and is not simply a direct result of physical injury.
+  rdfs:label: Disease
+  rdfs:subClassOf:
+    "@id": bts:DiseaseOrPhenotypicFeature
+  schema:isPartOf:
+    "@id": http://schema.biothings.io
+  http://www.w3.org/2002/07/owl#equivalentClass:
+    "@id": bsc:Disease
+
+- "@id": bts:Category
+  "@type": rdfs:Property
+  rdfs:comment: Name of the high level ontology class in which this entity is categorized. 
+  rdfs:label: Category
+  schema:domainIncludes:
+    - "@id": bts:BiologicalEntity
+  schema:rangeIncludes:
+    - "@id": schema:Text
+
+- "@id": bts:hasBioMarker
+  "@type": rdfs:Property
+  rdfs:comment: holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+  rdfs:label: hasBioMarker
+  schema:domainIncludes:
+    - "@id": bts:DiseaseOrPhenotypicFeature
+  schema:rangeIncludes:
+    - "@id": bts:MolecularEntity
+
+- "@id": bts:treatedBy
+  "@type": rdf:Property
+  rdfs:comment: Holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition.
+  rdfs:label: treatedBy
+  schema:domainIncludes:
+    - "@id": bts:DiseaseOrPhenotypicFeature
+  schema:rangeIncludes:
+    "@id": schema:Thing
+  schema:sameAs:
+    "@id": hls:possibleTreatment
+
+- "@id": bts:hasPhenotype
+  "@type": rdf:Property
+  rdfs:comment: holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+  rdfs:label: hasPhenotype
+  schema:domainIncludes:
+    - "@id": bts:Disease
+  schema:rangeIncludes:
+    "@id": bts:Phenotype
+  schema:sameAs:
+    "@id": hls:signOrSymptom
+
