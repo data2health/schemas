@@ -18,10 +18,10 @@
   rdfs:comment: a disorder of structure or function in a human, animal, or plant, especially one that produces specific signs or symptoms or that affects a specific location and is not simply a direct result of physical injury.
   rdfs:label: Disease
   rdfs:subClassOf:
-    "@id": schema:DiseaseOrPhenotypicFeature
+    "@id": bts:DiseaseOrPhenotypicFeature
   schema:isPartOf:
     "@id": http://schema.biothings.io
-  owl:equivalentClass:
+  http://www.w3.org/2002/07/owl#equivalentClass:
     "@id": bsc:Disease
 
 - "@id": bts:name
