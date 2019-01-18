@@ -68,7 +68,15 @@ def convert_class(file_name):
                 description = v["description"]
             # remove classes that belongs to either "association" or
             # "attribute", e.g. "genetovariantassociation"
-            if v["is_a"] not in ["association", "attribute"]:
+            if v["is_a"] not in ["association", "attribute",
+                                 "biological sex", "relationship quantifier",
+                                 "specificity quantifier",
+                                 "frequency qualifier",
+                                 "administrative entity",
+                                 "gene to gene association",
+                                 "entityToFeatureOrDiseaseQualifiers"] and not v["is_a"].endswith('quantifier') and not v["is_a"].endswith("association") and not v["is_a"].endswith("qualifiers") and not v["is_a"].endswith("relationship"):
+                if v["is_a"] == "named thing":
+                    v["is_a"] = "Thing"
                 restruct_class = {"rdfs:label": capitalizeClassName(k),
                                   "@id": "http://schema.biothings.io/" + capitalizeClassName(k),
                                   "@type": "rdfs:Class",
