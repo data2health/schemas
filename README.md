@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/data2health/schemas.svg?branch=biothings)](https://travis-ci.org/data2health/schemas)
+
 # schemas
 Hosting CD2H data schemas in schema.org standard
 
