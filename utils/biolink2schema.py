@@ -68,13 +68,11 @@ def convert_class(file_name):
                 description = v["description"]
             # remove classes that belongs to either "association" or
             # "attribute", e.g. "genetovariantassociation"
+            suffix_to_remove = ["quantifier", "qualifiers", "qualifier",
+                                "association", "relationship"]
             if v["is_a"] not in ["association", "attribute",
-                                 "biological sex", "relationship quantifier",
-                                 "specificity quantifier",
-                                 "frequency qualifier",
-                                 "administrative entity",
-                                 "gene to gene association",
-                                 "entityToFeatureOrDiseaseQualifiers"] and not v["is_a"].endswith('quantifier') and not v["is_a"].endswith("association") and not v["is_a"].endswith("qualifiers") and not v["is_a"].endswith("relationship"):
+                                 "biological sex",
+                                 "administrative entity"] and not v["is_a"].endswith(tuple(suffix_to_remove)):
                 if v["is_a"] == "named thing":
                     v["is_a"] = "Thing"
                 restruct_class = {"rdfs:label": capitalizeClassName(k),
