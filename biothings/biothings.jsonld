@@ -6,78 +6,6 @@
     },
     "@graph": [
         {
-            "@id": "http://schema.biothings.io/PhenotypicSex",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.",
-            "rdfs:label": "PhenotypicSex",
-            "rdfs:subClassOf": {
-                "@id": "BiologicalSex"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/GenotypicSex",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.",
-            "rdfs:label": "GenotypicSex",
-            "rdfs:subClassOf": {
-                "@id": "BiologicalSex"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/SenstivityQuantifier",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": null,
-            "rdfs:label": "SenstivityQuantifier",
-            "rdfs:subClassOf": {
-                "@id": "RelationshipQuantifier"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/SpecificityQuantifier",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": null,
-            "rdfs:label": "SpecificityQuantifier",
-            "rdfs:subClassOf": {
-                "@id": "RelationshipQuantifier"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/PathognomonicityQuantifier",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease",
-            "rdfs:label": "PathognomonicityQuantifier",
-            "rdfs:subClassOf": {
-                "@id": "SpecificityQuantifier"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/FrequencyQuantifier",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": null,
-            "rdfs:label": "FrequencyQuantifier",
-            "rdfs:subClassOf": {
-                "@id": "RelationshipQuantifier"
-            }
-        },
-        {
             "@id": "http://schema.biothings.io/BiologicalEntity",
             "@type": "rdfs:Class",
             "http://schema.org/isPartOf": {
@@ -86,7 +14,7 @@
             "rdfs:comment": null,
             "rdfs:label": "BiologicalEntity",
             "rdfs:subClassOf": {
-                "@id": "NamedThing"
+                "@id": "Thing"
             }
         },
         {
@@ -98,7 +26,7 @@
             "rdfs:comment": "a concept or class in an ontology, vocabulary or thesaurus",
             "rdfs:label": "OntologyClass",
             "rdfs:subClassOf": {
-                "@id": "NamedThing"
+                "@id": "Thing"
             }
         },
         {
@@ -254,7 +182,7 @@
             "rdfs:comment": "a piece of information that typically describes some piece of biology or is used as support.",
             "rdfs:label": "InformationContentEntity",
             "rdfs:subClassOf": {
-                "@id": "NamedThing"
+                "@id": "Thing"
             }
         },
         {
@@ -291,18 +219,6 @@
             "rdfs:label": "Publication",
             "rdfs:subClassOf": {
                 "@id": "InformationContentEntity"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/Provider",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "person, group, organization or project that provides a piece of information",
-            "rdfs:label": "Provider",
-            "rdfs:subClassOf": {
-                "@id": "AdministrativeEntity"
             }
         },
         {
@@ -386,7 +302,7 @@
             "rdfs:comment": "Any entity or process that exists at the level of the whole planet",
             "rdfs:label": "PlanetaryEntity",
             "rdfs:subClassOf": {
-                "@id": "NamedThing"
+                "@id": "Thing"
             }
         },
         {
@@ -422,7 +338,7 @@
             "rdfs:comment": "Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities",
             "rdfs:label": "ClinicalEntity",
             "rdfs:subClassOf": {
-                "@id": "NamedThing"
+                "@id": "Thing"
             }
         },
         {
@@ -458,7 +374,7 @@
             "rdfs:comment": "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment",
             "rdfs:label": "Device",
             "rdfs:subClassOf": {
-                "@id": "NamedThing"
+                "@id": "Thing"
             }
         },
         {
@@ -762,198 +678,6 @@
             }
         },
         {
-            "@id": "http://schema.biothings.io/GeneToGeneHomologyAssociation",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)",
-            "rdfs:label": "GeneToGeneHomologyAssociation",
-            "rdfs:subClassOf": {
-                "@id": "GeneToGeneAssociation"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/PairwiseGeneToGeneInteraction",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)",
-            "rdfs:label": "PairwiseGeneToGeneInteraction",
-            "rdfs:subClassOf": {
-                "@id": "GeneToGeneAssociation"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/EntityToFeatureOrDiseaseQualifiers",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "Qualifiers for entity to disease or phenotype associations",
-            "rdfs:label": "EntityToFeatureOrDiseaseQualifiers",
-            "rdfs:subClassOf": {
-                "@id": "FrequencyQualifier"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/EntityToDiseaseAssociation",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "mixin class for any association whose object (target node) is a disease",
-            "rdfs:label": "EntityToDiseaseAssociation",
-            "rdfs:subClassOf": {
-                "@id": "EntityToFeatureOrDiseaseQualifiers"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.",
-            "rdfs:label": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
-            "rdfs:subClassOf": {
-                "@id": "DiseaseOrPhenotypicFeatureAssociationToThingAssociation"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/GeneAsAModelOfDiseaseAssociation",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": null,
-            "rdfs:label": "GeneAsAModelOfDiseaseAssociation",
-            "rdfs:subClassOf": {
-                "@id": "GeneToDiseaseAssociation"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/GeneHasVariantThatContributesToDiseaseAssociation",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": null,
-            "rdfs:label": "GeneHasVariantThatContributesToDiseaseAssociation",
-            "rdfs:subClassOf": {
-                "@id": "GeneToDiseaseAssociation"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/MacromolecularMachineToMolecularActivityAssociation",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution",
-            "rdfs:label": "MacromolecularMachineToMolecularActivityAssociation",
-            "rdfs:subClassOf": {
-                "@id": "FunctionalAssociation"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/MacromolecularMachineToBiologicalProcessAssociation",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it",
-            "rdfs:label": "MacromolecularMachineToBiologicalProcessAssociation",
-            "rdfs:subClassOf": {
-                "@id": "FunctionalAssociation"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/MacromolecularMachineToCellularComponentAssociation",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component",
-            "rdfs:label": "MacromolecularMachineToCellularComponentAssociation",
-            "rdfs:subClassOf": {
-                "@id": "FunctionalAssociation"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/GeneToGoTermAssociation",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": null,
-            "rdfs:label": "GeneToGoTermAssociation",
-            "rdfs:subClassOf": {
-                "@id": "FunctionalAssociation"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/TranscriptToGeneRelationship",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "A gene is a collection of transcripts",
-            "rdfs:label": "TranscriptToGeneRelationship",
-            "rdfs:subClassOf": {
-                "@id": "SequenceFeatureRelationship"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/GeneToGeneProductRelationship",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "A gene is transcribed and potentially translated to a gene product",
-            "rdfs:label": "GeneToGeneProductRelationship",
-            "rdfs:subClassOf": {
-                "@id": "SequenceFeatureRelationship"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/ExonToTranscriptRelationship",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "A transcript is formed from multiple exons",
-            "rdfs:label": "ExonToTranscriptRelationship",
-            "rdfs:subClassOf": {
-                "@id": "SequenceFeatureRelationship"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/AnatomicalEntityToAnatomicalEntityPartOfAssociation",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms",
-            "rdfs:label": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
-            "rdfs:subClassOf": {
-                "@id": "AnatomicalEntityToAnatomicalEntityAssociation"
-            }
-        },
-        {
-            "@id": "http://schema.biothings.io/AnatomicalEntityToAnatomicalEntityOntogenicAssociation",
-            "@type": "rdfs:Class",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "rdfs:comment": "A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship",
-            "rdfs:label": "AnatomicalEntityToAnatomicalEntityOntogenicAssociation",
-            "rdfs:subClassOf": {
-                "@id": "AnatomicalEntityToAnatomicalEntityAssociation"
-            }
-        },
-        {
             "@id": "http://schema.biothings.io/Occurrent",
             "@type": "rdfs:Class",
             "http://schema.org/isPartOf": {
@@ -962,7 +686,7 @@
             "rdfs:comment": "A processual entity",
             "rdfs:label": "Occurrent",
             "rdfs:subClassOf": {
-                "@id": "NamedThing"
+                "@id": "Thing"
             }
         },
         {
