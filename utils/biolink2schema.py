@@ -72,7 +72,7 @@ def convert_class(file_name):
                 restruct_class = {"rdfs:label": capitalizeClassName(k),
                                   "@id": "http://schema.biothings.io/" + capitalizeClassName(k),
                                   "@type": "rdfs:Class",
-                                  "rdfs:subClassOf": {"@id": v['is_a']},
+                                  "rdfs:subClassOf": {"@id": capitalizeClassName(v['is_a'])},
                                   "http://schema.org/isPartOf": {"@id": "http://schema.biothings.io"},
                                   "rdfs:comment": description}
                 restruct_classes.append(restruct_class)
@@ -119,6 +119,6 @@ def convert_biolink_model_to_schema(file_name):
     return biothings_schema
 
 if __name__ == "__main__":
-    with open("../biothings/biothings.yaml", "w") as outfile:
+    with open("../biothings/biothings.jsonld", "w") as outfile:
         json.dump(convert_biolink_model_to_schema("../biolink/biolink_model.yaml"), outfile, sort_keys = True, indent = 4,
                ensure_ascii = False)
