@@ -1,5 +1,6 @@
 import yaml
 from jsonschema import validate, ValidationError
+import json
 
 
 # schema for biolink classes, used for json schema validation
@@ -105,3 +106,19 @@ def convert_properties(file_name):
                                  "http://schema.org/isPartOf": {"@id": "http://schema.biothings.io"}}
             restruct_properties.append(restruct_property)
     return restruct_properties
+
+def convert_biolink_model_to_schema(file_name):
+    classes = convert_class(file_name)
+    properties = convert_properties(file_name)
+    graph = classes + properties
+    biothings_schema = {"@id": "http://schema.biothings.io/#0.1",
+                        "@context": {"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                                     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+                                     "xsd": "http://www.w3.org/2001/XMLSchema#"},
+                        "@graph": graph}
+    return biothings_schema
+
+if __name__ == "__main__":
+    with open("../biothings/biothings.yaml", "w") as outfile:
+        json.dump(convert_biolink_model_to_schema("../biolink/biolink_model.yaml"), outfile, sort_keys = True, indent = 4,
+               ensure_ascii = False)
