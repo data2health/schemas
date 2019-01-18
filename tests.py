@@ -27,14 +27,16 @@ class TestBioThingsSchema(unittest.TestCase):
     def test_class_specific_features(self):
         """Test features belong to schema classes
         """
-        all_classes = [_doc["rdfs:label"] for _doc in self.biothings_schema["@graph"] if _doc["@type"] == "rdfs:Class"] + ["Thing"]
+        all_classes = [_doc["@id"] for _doc in self.biothings_schema["@graph"] if _doc["@type"] == "rdfs:Class"] + ["http://schema.org/Thing"]
         for _doc in self.biothings_schema["@graph"]:
             if _doc["@type"] == "rdfs:Class":
                 self.assertTrue(_doc["rdfs:label"][0].isupper())
-                self.assertTrue(_doc["rdfs:subClassOf"]["@id"][0].isupper())
+                if _doc["rdfs:subClassOf"]["@id"] != "http://schema.org/Thing":
+                    self.assertTrue(_doc["rdfs:subClassOf"]["@id"][27].isupper())
                 self.assertIn(_doc["rdfs:subClassOf"]["@id"], all_classes)
 
-    
+    def test_property_specific_features(self):
+        all_classes = [_doc["rdfs:label"] for _doc in self.biothings_schema["@graph"] if _doc["@type"] == "rdfs:Class"] + ["Thing"]
 
 
 if __name__ == '__main__':
