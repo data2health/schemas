@@ -73,14 +73,14 @@ def convert_class(file_name):
             if v["is_a"] not in ["association", "attribute",
                                  "biological sex",
                                  "administrative entity"] and not v["is_a"].endswith(tuple(suffix_to_remove)):
-                if v["is_a"] == "named thing":
-                    v["is_a"] = "Thing"
                 restruct_class = {"rdfs:label": capitalizeClassName(k),
                                   "@id": "http://schema.biothings.io/" + capitalizeClassName(k),
                                   "@type": "rdfs:Class",
-                                  "rdfs:subClassOf": {"@id": capitalizeClassName(v['is_a'])},
+                                  "rdfs:subClassOf": {"@id": "http://schema.biothings.io/" + capitalizeClassName(v['is_a'])},
                                   "http://schema.org/isPartOf": {"@id": "http://schema.biothings.io"},
                                   "rdfs:comment": description}
+                if v["is_a"] == "named thing":
+                    restruct_class["rdfs:subClassOf"]["@id"] = "http://schema.org/Thing"
                 restruct_classes.append(restruct_class)
     return restruct_classes
 
@@ -105,8 +105,8 @@ def convert_properties(file_name):
                 description = v["description"]
             restruct_property = {"rdfs:label": capitalizePropertyName(k),
                                  "rdfs:comment": description,
-                                 "http://schema.org/domainIncludes": capitalizeClassName(v["domain"]),
-                                 "http://schema.org/rangeIncludes": capitalizeClassName(v["range"]),
+                                 "http://schema.org/domainIncludes": "http://schema.biothings.io/" + capitalizeClassName(v["domain"]),
+                                 "http://schema.org/rangeIncludes": "http://schema.biothings.io/" + capitalizeClassName(v["range"]),
                                  "@id": "http://schema.biothings.io/" + capitalizePropertyName(k),
                                  "@type": "rdf:Property",
                                  "http://schema.org/isPartOf": {"@id": "http://schema.biothings.io"}}
