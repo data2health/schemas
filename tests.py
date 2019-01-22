@@ -24,6 +24,10 @@ class TestBioThingsSchema(unittest.TestCase):
             self.assertEqual(_doc["@id"][27:], _doc["rdfs:label"])
             self.assertEqual(len(_doc["rdfs:label"].split(' ')), 1)
 
+    def test_duplicate_items(self):
+        all_classes_properties = [_doc["@id"] for _doc in self.biothings_schema["@graph"]]
+        self.assertEqual(len(all_classes_properties), len(set(all_classes_properties)))
+
     def test_class_specific_features(self):
         """Test features belong to schema classes
         """
@@ -36,7 +40,14 @@ class TestBioThingsSchema(unittest.TestCase):
                 self.assertIn(_doc["rdfs:subClassOf"]["@id"], all_classes)
 
     def test_property_specific_features(self):
-        all_classes = [_doc["rdfs:label"] for _doc in self.biothings_schema["@graph"] if _doc["@type"] == "rdfs:Class"] + ["Thing"]
+        """Test features belong to schema properties
+        """
+        all_classes = [_doc["@id"] for _doc in self.biothings_schema["@graph"] if _doc["@type"] == "rdfs:Class"] + ["http://schema.org/Thing"]
+        for _doc in self.biothings_schema["@graph"]:
+            if _doc["@type"] == "rdf:Property":
+                self.assertIn(_doc["http://schema.org/domainIncludes"], all_classes)
+                self.assertIn(_doc["http://schema.org/rangeIncludes"], all_classes)
+                #self.assertEqual(1, 2)
 
 
 if __name__ == '__main__':
