@@ -834,17 +834,6 @@
             }
         },
         {
-            "@id": "http://schema.biothings.io/relatedTo",
-            "@type": "rdf:Property",
-            "http://schema.org/domainIncludes": "http://schema.biothings.io/NamedThing",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "http://schema.org/rangeIncludes": "http://schema.biothings.io/NamedThing",
-            "rdfs:comment": "A grouping for any relationship type that holds between any two things",
-            "rdfs:label": "relatedTo"
-        },
-        {
             "@id": "http://schema.biothings.io/molecularlyInteractsWith",
             "@type": "rdf:Property",
             "http://schema.org/domainIncludes": "http://schema.biothings.io/MolecularEntity",
@@ -1544,7 +1533,7 @@
             "http://schema.org/isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "http://schema.org/rangeIncludes": "http://schema.biothings.io/Phenotype",
+            "http://schema.org/rangeIncludes": "http://schema.biothings.io/DiseaseOrPhenotypicFeature",
             "rdfs:comment": "holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). ",
             "rdfs:label": "hasPhenotype"
         },
@@ -1569,116 +1558,6 @@
             "http://schema.org/rangeIncludes": "http://schema.biothings.io/OntologyClass",
             "rdfs:comment": "holds between two classes where the domain class is a specialization of the range class",
             "rdfs:label": "subclassOf"
-        },
-        {
-            "@id": "http://schema.biothings.io/id",
-            "@type": "rdf:Property",
-            "http://schema.org/domainIncludes": "http://schema.biothings.io/NamedThing",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "http://schema.org/rangeIncludes": "http://schema.biothings.io/IdentifierType",
-            "rdfs:comment": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-            "rdfs:label": "id"
-        },
-        {
-            "@id": "http://schema.biothings.io/association_id",
-            "@type": "rdf:Property",
-            "http://schema.org/domainIncludes": "http://schema.biothings.io/Association",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "http://schema.org/rangeIncludes": "http://schema.biothings.io/IdentifierType",
-            "rdfs:comment": "A unique identifier for an association",
-            "rdfs:label": "association_id"
-        },
-        {
-            "@id": "http://schema.biothings.io/iri",
-            "@type": "rdf:Property",
-            "http://schema.org/domainIncludes": "http://schema.biothings.io/NamedThing",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "http://schema.org/rangeIncludes": "http://schema.biothings.io/IriType",
-            "rdfs:comment": "An IRI for the node. This is determined by the id using expansion rules.",
-            "rdfs:label": "iri"
-        },
-        {
-            "@id": "http://schema.biothings.io/name",
-            "@type": "rdf:Property",
-            "http://schema.org/domainIncludes": "http://schema.biothings.io/NamedThing",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "http://schema.org/rangeIncludes": "http://schema.biothings.io/LabelType",
-            "rdfs:comment": "A human-readable name for a thing",
-            "rdfs:label": "name"
-        },
-        {
-            "@id": "http://schema.biothings.io/category",
-            "@type": "rdf:Property",
-            "http://schema.org/domainIncludes": "http://schema.biothings.io/NamedThing",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "http://schema.org/rangeIncludes": "http://schema.biothings.io/IriType",
-            "rdfs:comment": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
-            "rdfs:label": "category"
-        },
-        {
-            "@id": "http://schema.biothings.io/fullName",
-            "@type": "rdf:Property",
-            "http://schema.org/domainIncludes": "http://schema.biothings.io/NamedThing",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "http://schema.org/rangeIncludes": "http://schema.biothings.io/LabelType",
-            "rdfs:comment": "a long-form human readable name for a thing",
-            "rdfs:label": "fullName"
-        },
-        {
-            "@id": "http://schema.biothings.io/description",
-            "@type": "rdf:Property",
-            "http://schema.org/domainIncludes": "http://schema.biothings.io/NamedThing",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "http://schema.org/rangeIncludes": "http://schema.biothings.io/NarrativeText",
-            "rdfs:comment": "a human-readable description of a thing",
-            "rdfs:label": "description"
-        },
-        {
-            "@id": "http://schema.biothings.io/systematicSynonym",
-            "@type": "rdf:Property",
-            "http://schema.org/domainIncludes": "http://schema.biothings.io/NamedThing",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "http://schema.org/rangeIncludes": "http://schema.biothings.io/LabelType",
-            "rdfs:comment": "more commonly used for gene symbols in yeast",
-            "rdfs:label": "systematicSynonym"
-        },
-        {
-            "@id": "http://schema.biothings.io/relation",
-            "@type": "rdf:Property",
-            "http://schema.org/domainIncludes": "http://schema.biothings.io/Association",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "http://schema.org/rangeIncludes": "http://schema.biothings.io/IriType",
-            "rdfs:comment": "the relationship type by which a subject is connected to an object in an association",
-            "rdfs:label": "relation"
-        },
-        {
-            "@id": "http://schema.biothings.io/inTaxon",
-            "@type": "rdf:Property",
-            "http://schema.org/domainIncludes": "http://schema.biothings.io/ThingWithTaxon",
-            "http://schema.org/isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "http://schema.org/rangeIncludes": "http://schema.biothings.io/OrganismTaxon",
-            "rdfs:comment": "connects a thing to a class representing a taxon",
-            "rdfs:label": "inTaxon"
         }
     ],
     "@id": "http://schema.biothings.io/#0.1"

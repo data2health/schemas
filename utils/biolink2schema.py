@@ -103,14 +103,21 @@ def convert_properties(file_name):
             description = None
             if "description" in v:
                 description = v["description"]
-            restruct_property = {"rdfs:label": capitalizePropertyName(k),
-                                 "rdfs:comment": description,
-                                 "http://schema.org/domainIncludes": "http://schema.biothings.io/" + capitalizeClassName(v["domain"]),
-                                 "http://schema.org/rangeIncludes": "http://schema.biothings.io/" + capitalizeClassName(v["range"]),
-                                 "@id": "http://schema.biothings.io/" + capitalizePropertyName(k),
-                                 "@type": "rdf:Property",
-                                 "http://schema.org/isPartOf": {"@id": "http://schema.biothings.io"}}
-            restruct_properties.append(restruct_property)
+            if v["domain"] not in ['named thing', 'association', 'thing with taxon']:
+                restruct_property = {"rdfs:label": capitalizePropertyName(k),
+                                     "rdfs:comment": description,
+                                     "http://schema.org/domainIncludes": "http://schema.biothings.io/" + capitalizeClassName(v["domain"]),
+                                     "http://schema.org/rangeIncludes": "http://schema.biothings.io/" + capitalizeClassName(v["range"]),
+                                     "@id": "http://schema.biothings.io/" + capitalizePropertyName(k),
+                                     "@type": "rdf:Property",
+                                     "http://schema.org/isPartOf": {"@id": "http://schema.biothings.io"}}
+                if v["domain"] == "named thing":
+                    restruct_property["http://schema.org/domainIncludes"] = "http://schema.org/Thing"
+                if v["range"] == "named thing":
+                    restruct_property["http://schema.org/rangeIncludes"] = "http://schema.org/Thing"
+                if v["range"] == "phenotype":
+                    restruct_property["http://schema.org/rangeIncludes"] = "http://schema.biothings.io/DiseaseOrPhenotypicFeature"
+                restruct_properties.append(restruct_property)
     return restruct_properties
 
 def convert_biolink_model_to_schema(file_name):
