@@ -106,17 +106,17 @@ def convert_properties(file_name):
             if v["domain"] not in ['named thing', 'association', 'thing with taxon']:
                 restruct_property = {"rdfs:label": capitalizePropertyName(k),
                                      "rdfs:comment": description,
-                                     "schema:domainIncludes": "bts:" + capitalizeClassName(v["domain"]),
-                                     "schema:rangeIncludes": "bts:" + capitalizeClassName(v["range"]),
+                                     "schema:domainIncludes": {"@id": "bts:" + capitalizeClassName(v["domain"])},
+                                     "schema:rangeIncludes": {"@id": "bts:" + capitalizeClassName(v["range"])},
                                      "@id": "bts:" + capitalizePropertyName(k),
                                      "@type": "rdf:Property",
                                      "schema:isPartOf": {"@id": "http://schema.biothings.io"}}
                 if v["domain"] == "named thing":
-                    restruct_property["schema:domainIncludes"] = "schema:Thing"
+                    restruct_property["schema:domainIncludes"] = {"@id": "schema:Thing"}
                 if v["range"] == "named thing":
-                    restruct_property["schema:rangeIncludes"] = "schema:Thing"
+                    restruct_property["schema:rangeIncludes"] = {"@id": "schema:Thing"}
                 if v["range"] == "phenotype":
-                    restruct_property["schema:rangeIncludes"] = "bts:DiseaseOrPhenotypicFeature"
+                    restruct_property["schema:rangeIncludes"] = {"@id": "bts:DiseaseOrPhenotypicFeature"}
                 restruct_properties.append(restruct_property)
     return restruct_properties
 
