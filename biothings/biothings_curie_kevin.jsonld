@@ -947,7 +947,7 @@
             "@id": "bts:orthologousTo",
             "@type": "rdf:Property",
             "rdfs:comment": "Orthologous to",
-            "rdfs:label": orthologousTo",
+            "rdfs:label": "orthologousTo",
             "schema:domainIncludes": {
                 "@id": "bts:GeneOrGeneProduct"
             },
