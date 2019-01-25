@@ -885,7 +885,7 @@
             "@id": "bts:refseq",
             "@type": "rdf:Property",
             "rdfs:comment": "Refseq ID for gene, protein or transcript",
-            "rdfs:label": "entrez",
+            "rdfs:label": "refseq",
             "schema:domainIncludes": [{
                 "@id": "bts:GeneOrGeneProduct",
                 "@id": "bts:Transcript"
@@ -901,7 +901,7 @@
             "@id": "bts:omim",
             "@type": "rdf:Property",
             "rdfs:comment": "Refseq ID for gene, protein or transcript",
-            "rdfs:label": "entrez",
+            "rdfs:label": "omim",
             "schema:domainIncludes": [{
                 "@id": "bts:Gene",
                 "@id": "bts:Disease"
@@ -917,7 +917,7 @@
             "@id": "bts:umls",
             "@type": "rdf:Property",
             "rdfs:comment": "Refseq ID for gene, protein or transcript",
-            "rdfs:label": "entrez",
+            "rdfs:label": "umls",
             "schema:domainIncludes": {
                 "@id": "bts:Disease"
             },
