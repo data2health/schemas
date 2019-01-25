@@ -944,10 +944,10 @@
             }
         },
         {
-            "@id": "bts:homologousTo",
+            "@id": "bts:orthologousTo",
             "@type": "rdf:Property",
-            "rdfs:comment": "Shared ancestry between protein or gene",
-            "rdfs:label": "homologousTo",
+            "rdfs:comment": "Orthologous to",
+            "rdfs:label": orthologousTo",
             "schema:domainIncludes": {
                 "@id": "bts:GeneOrGeneProduct"
             },
@@ -1749,8 +1749,25 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "schema:rangeIncludes": {
+            "schema:rangeIncludes": 
+            {
                 "@id": "bts:GeneProduct"
+            }
+        },
+        {
+            "@id": "bts:hasTranscript",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between a gene and a gene transcript",
+            "rdfs:label": "hasTranscript",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": 
+            {
+                "@id": "bts:Transcript"
             }
         },
         {
