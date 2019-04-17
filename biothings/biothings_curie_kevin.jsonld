@@ -1114,6 +1114,24 @@
             }
         },
         {
+            "@id": "bts:uniprot",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Protein Uniprot ID",
+            "rdfs:label": "uniprot",
+            "schema:domainIncludes": {
+                "@id": "bts:Protein"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
             "@id": "bts:refseq",
             "@type": "rdf:Property",
             "rdfs:comment": "Refseq ID for gene, protein or transcript",
