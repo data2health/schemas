@@ -776,6 +776,30 @@
             }
         },
         {
+            "@id": "bts:Wikipathway",
+            "@type": "rdfs:Class",
+            "rdfs:comment": null,
+            "rdfs:label": "Wikipathway",
+            "rdfs:subClassOf": {
+                "@id": "bts:Pathway"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            }
+        },
+        {
+            "@id": "bts:ReactomePathway",
+            "@type": "rdfs:Class",
+            "rdfs:comment": null,
+            "rdfs:label": "ReactomePathway",
+            "rdfs:subClassOf": {
+                "@id": "bts:Pathway"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            }
+        },
+        {
             "@id": "bts:PhysiologicalProcess",
             "@type": "rdfs:Class",
             "rdfs:comment": null,
@@ -1204,6 +1228,57 @@
             },
             "schema:rangeIncludes": {
                 "@id": "bts:BiologicalProcess"
+            }
+        },
+        {
+            "@id": "bts:involvedInPathway",
+            "@type": "rdf:Property",
+            "rdfs:comment": "An interaction between a biological entity and a pathway",
+            "rdfs:label": "involvedInPathway",
+            "schema:domainIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:Pathway"
+            }
+        },
+        {
+            "@id": "bts:involvedInWikipathway",
+            "@type": "rdf:Property",
+            "rdfs:comment": "An interaction between a biological entity and a wikipathway",
+            "rdfs:label": "involvedInWikipathway",
+            "schema:domainIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:Wikipathway"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "bts:involvedInPathway"
+            }
+        },
+        {
+            "@id": "bts:involvedInReactomePathway",
+            "@type": "rdf:Property",
+            "rdfs:comment": "An interaction between a biological entity and a reactome pathway",
+            "rdfs:label": "involvedInReactomePathway",
+            "schema:domainIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:ReactomePathway"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "bts:involvedInPathway"
             }
         },
         {
@@ -2049,6 +2124,22 @@
             "schema:rangeIncludes": 
             {
                 "@id": "bts:Transcript"
+            }
+        },
+        {
+            "@id": "bts:hasProteinStructure",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between a gene or gene product and a protein structure",
+            "rdfs:label": "hasProteinStructure",
+            "schema:domainIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": 
+            {
+                "@id": "bts:ProteinStructure"
             }
         },
         {
