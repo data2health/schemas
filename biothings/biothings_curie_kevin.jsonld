@@ -840,10 +840,14 @@
             "@type": "rdf:Property",
             "rdfs:comment": "Ensembl ID for gene, protein or transcript",
             "rdfs:label": "ensembl",
-            "schema:domainIncludes": [{
-                "@id": "bts:GeneOrGeneProduct",
-                "@id": "bts:Transcript"
-            }],
+            "schema:domainIncludes": [
+                {
+                    "@id": "bts:GeneOrGeneProduct"
+                },
+                {
+                    "@id": "bts:Transcript"
+                }
+            ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
@@ -900,6 +904,42 @@
             },
             "schema:rangeIncludes": {
                 "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:pharos",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Pharos ID for gene",
+            "rdfs:label": "pharos",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:symbol",
+            "@type": "rdf:Property",
+            "rdfs:comment": "gene symbol",
+            "rdfs:label": "symbol",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
             },
             "rdfs:subPropertyOf": {
                 "@id": "http://schema.org/identifier"
@@ -972,6 +1012,54 @@
             },
             "rdfs:subPropertyOf": {
                 "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:unigene",
+            "@type": "rdf:Property",
+            "rdfs:comment": "unigene ID",
+            "rdfs:label": "unigene",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:enablesMF",
+            "@type": "rdf:Property",
+            "rdfs:comment": "GO molecular function enabled by the gene/protein.",
+            "rdfs:label": "enablesMF",
+            "schema:domainIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            }
+        },
+        {
+            "@id": "bts:involvedInBP",
+            "@type": "rdf:Property",
+            "rdfs:comment": "GO biological process this gene/protein is involved in.",
+            "rdfs:label": "involvedInBP",
+            "schema:domainIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
             }
         },
         {
