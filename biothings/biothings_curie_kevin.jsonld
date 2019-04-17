@@ -1044,7 +1044,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "bts:GeneOrGeneProduct"
+                "@id": "bts:MolecularActivity"
             }
         },
         {
@@ -1059,7 +1059,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "bts:GeneOrGeneProduct"
+                "@id": "bts:BiologicalProcess"
             }
         },
         {
