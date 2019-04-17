@@ -877,6 +877,150 @@
             }
         },
         {
+            "@id": "bts:mgi",
+            "@type": "rdf:Property",
+            "rdfs:comment": "MGI ID for gene",
+            "rdfs:label": "mgi",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:rgd",
+            "@type": "rdf:Property",
+            "rdfs:comment": "RGD ID for gene",
+            "rdfs:label": "rgd",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:zfin",
+            "@type": "rdf:Property",
+            "rdfs:comment": "ZFIN ID for gene",
+            "rdfs:label": "rgd",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:flybase",
+            "@type": "rdf:Property",
+            "rdfs:comment": "FlyBase ID for gene",
+            "rdfs:label": "flybase",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:sgd",
+            "@type": "rdf:Property",
+            "rdfs:comment": "SGD ID for gene",
+            "rdfs:label": "sgd",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:pombase",
+            "@type": "rdf:Property",
+            "rdfs:comment": "PomBase ID for gene",
+            "rdfs:label": "pombase",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:dictybase",
+            "@type": "rdf:Property",
+            "rdfs:comment": "DictyBase ID for gene",
+            "rdfs:label": "dictybase",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:tair",
+            "@type": "rdf:Property",
+            "rdfs:comment": "TAIR ID for gene",
+            "rdfs:label": "tair",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
             "@id": "bts:inTaxon",
             "@type": "rdf:Property",
             "rdfs:comment": "connects a thing to a class representing a taxon",
