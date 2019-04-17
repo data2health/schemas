@@ -849,6 +849,9 @@
             },
             "schema:rangeIncludes": {
                 "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
             }
         },
         {
@@ -864,6 +867,24 @@
             },
             "schema:rangeIncludes": {
                 "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:inTaxon",
+            "@type": "rdf:Property",
+            "rdfs:comment": "connects a thing to a class representing a taxon",
+            "rdfs:label": "inTaxon",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:OrganismTaxon"
             }
         },
         {
@@ -879,6 +900,9 @@
             },
             "schema:rangeIncludes": {
                 "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
             }
         },
         {
@@ -886,15 +910,22 @@
             "@type": "rdf:Property",
             "rdfs:comment": "Refseq ID for gene, protein or transcript",
             "rdfs:label": "refseq",
-            "schema:domainIncludes": [{
-                "@id": "bts:GeneOrGeneProduct",
-                "@id": "bts:Transcript"
-            }],
+            "schema:domainIncludes": [
+                {
+                    "@id": "bts:GeneOrGeneProduct"
+                },
+                {
+                    "@id": "bts:Transcript"
+                }
+            ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
                 "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
             }
         },
         {
@@ -902,15 +933,22 @@
             "@type": "rdf:Property",
             "rdfs:comment": "Refseq ID for gene, protein or transcript",
             "rdfs:label": "omim",
-            "schema:domainIncludes": [{
-                "@id": "bts:Gene",
-                "@id": "bts:Disease"
-            }],
+            "schema:domainIncludes": [
+                {
+                    "@id": "bts:Gene"
+                },
+                {
+                    "@id": "bts:Disease"
+                }
+            ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
                 "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
             }
         },
         {
@@ -918,14 +956,22 @@
             "@type": "rdf:Property",
             "rdfs:comment": "Refseq ID for gene, protein or transcript",
             "rdfs:label": "umls",
-            "schema:domainIncludes": {
-                "@id": "bts:Disease"
-            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "bts:Gene"
+                },
+                {
+                    "@id": "bts:Disease"
+                }
+            ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
                 "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
             }
         },
         {
@@ -950,6 +996,9 @@
             "rdfs:label": "orthologousTo",
             "schema:domainIncludes": {
                 "@id": "bts:GeneOrGeneProduct"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "bts:homologousTo"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
