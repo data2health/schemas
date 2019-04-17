@@ -1096,6 +1096,29 @@
             }
         },
         {
+            "@id": "bts:pharmgkb",
+            "@type": "rdf:Property",
+            "rdfs:comment": "PharmGKB ID",
+            "rdfs:label": "pharmgkb",
+            "schema:domainIncludes": [
+                {
+                    "@id": "bts:Gene"
+                },
+                {
+                    "@id": "bts:Pathway"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
             "@id": "bts:symbol",
             "@type": "rdf:Property",
             "rdfs:comment": "gene symbol",
