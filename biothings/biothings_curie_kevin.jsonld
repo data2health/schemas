@@ -1112,7 +1112,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "schema:Integer"
+                "@id": "schema:Text"
             },
             "rdfs:subPropertyOf": {
                 "@id": "http://schema.org/identifier"
@@ -1239,6 +1239,180 @@
             },
             "rdfs:subPropertyOf": {
                 "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:inchi",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Inchi for chemical",
+            "rdfs:label": "inchi",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:inchikey",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Inchikey for chemical",
+            "rdfs:label": "inchikey",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:rxcui",
+            "@type": "rdf:Property",
+            "rdfs:comment": "RXCUI for chemical",
+            "rdfs:label": "rxcui",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:smiles",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Smiles for chemical",
+            "rdfs:label": "smiles",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:pubchem",
+            "@type": "rdf:Property",
+            "rdfs:comment": "PubChem ID for chemical",
+            "rdfs:label": "pubchem",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:chembl",
+            "@type": "rdf:Property",
+            "rdfs:comment": "ChEMBL compound ID for chemical",
+            "rdfs:label": "chembl",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:drugbank",
+            "@type": "rdf:Property",
+            "rdfs:comment": "DrugBank ID for chemical",
+            "rdfs:label": "drugbank",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:unii",
+            "@type": "rdf:Property",
+            "rdfs:comment": "UNII ID for chemical",
+            "rdfs:label": "unii",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:molecularFormula",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Chemical molecular formula",
+            "rdfs:label": "molecularFormula",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            }
+        },
+        {
+            "@id": "bts:interactingDrug",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.",
+            "rdfs:label": "interactingDrug",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:ChemicalSubstance"
             }
         },
         {
