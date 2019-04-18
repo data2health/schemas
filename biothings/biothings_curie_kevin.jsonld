@@ -1416,6 +1416,78 @@
             }
         },
         {
+            "@id": "bts:metabolizedBy",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Proteins that metabolize chemicals",
+            "rdfs:label": "metabolizedBy",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:inverseOf": {
+                "@id": "metabolize"
+            }
+        },
+        {
+            "@id": "bts:metabolize",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Proteins that metabolize chemicals",
+            "rdfs:label": "metabolize",
+            "schema:domainIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:inverseOf": {
+                "@id": "metabolizedBy"
+            }
+        },
+        {
+            "@id": "bts:target",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Genes or Proteins that are targeted by chemicals",
+            "rdfs:label": "target",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:targetedBy"
+            }
+        },
+        {
+            "@id": "bts:targetedBy",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Chemicals target genes or proteins",
+            "rdfs:label": "targetedBy",
+            "schema:domainIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:target"
+            }
+        },
+        {
             "@id": "bts:enablesMF",
             "@type": "rdf:Property",
             "rdfs:comment": "GO molecular function enabled by the gene/protein.",
@@ -1527,6 +1599,21 @@
             },
             "schema:rangeIncludes": {
                 "@id": "bts:GeneOrGeneProduct"
+            }
+        },
+        {
+            "@id": "bts:potentialUse",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Intended use of the molecular entity by humans.",
+            "rdfs:label": "potentialUse",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
             }
         },
         {
