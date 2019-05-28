@@ -1569,10 +1569,10 @@
             }
         },
         {
-            "@id": "bts:homologousTo",
+            "@id": "bts:hasHomolog",
             "@type": "rdf:Property",
             "rdfs:comment": "Shared ancestry between protein or gene",
-            "rdfs:label": "homologousTo",
+            "rdfs:label": "hasHomolog",
             "schema:domainIncludes": {
                 "@id": "bts:GeneOrGeneProduct"
             },
@@ -1581,6 +1581,9 @@
             },
             "schema:rangeIncludes": {
                 "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:hasHomolog"
             }
         },
         {
