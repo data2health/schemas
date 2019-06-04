@@ -860,6 +860,18 @@
             }
         },
         {
+            "@id": "bts:ProteinStructure",
+            "@type": "rdfs:Class",
+            "rdfs:comment": null,
+            "rdfs:label": "ProteinStructure",
+            "rdfs:subClassOf": {
+                "@id": "bts:InformationContentEntity"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            }
+        },
+        {
             "@id": "bts:ensembl",
             "@type": "rdf:Property",
             "rdfs:comment": "Ensembl ID for gene, protein or transcript",
