@@ -2458,7 +2458,7 @@
             "@id": "bts:isTranslatedFrom",
             "@type": "rdf:Property",
             "rdfs:comment": "holds between gene product and a gene",
-            "rdfs:label": "hasGeneProduct",
+            "rdfs:label": "isTranslatedFrom",
             "schema:domainIncludes": {
                 "@id": "bts:GeneProduct"
             },
