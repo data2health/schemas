@@ -940,7 +940,7 @@
             "@id": "bts:zfin",
             "@type": "rdf:Property",
             "rdfs:comment": "ZFIN ID for gene",
-            "rdfs:label": "rgd",
+            "rdfs:label": "zfin",
             "schema:domainIncludes": {
                 "@id": "bts:Gene"
             },
@@ -1595,7 +1595,7 @@
                 "@id": "bts:GeneOrGeneProduct"
             },
             "rdfs:subPropertyOf": {
-                "@id": "bts:homologousTo"
+                "@id": "bts:hasHomolog"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
@@ -2449,6 +2449,28 @@
             "schema:rangeIncludes": 
             {
                 "@id": "bts:GeneProduct"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:isTranslatedFrom"
+            }
+        },
+        {
+            "@id": "bts:isTranslatedFrom",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between gene product and a gene",
+            "rdfs:label": "hasGeneProduct",
+            "schema:domainIncludes": {
+                "@id": "bts:GeneProduct"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": 
+            {
+                "@id": "bts:Gene"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:isTranslatedFrom"
             }
         },
         {
