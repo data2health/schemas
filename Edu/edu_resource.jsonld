@@ -1,0 +1,135 @@
+{
+    "@context": {
+        "schema": "http://schema.org/",
+        "bibo": "http://purl.org/ontology/bibo/",
+        "dc": "http://purl.org/dc/elements/1.1/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "dct": "http://purl.org/dc/terms/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dctype": "http://purl.org/dc/dcmitype/",
+        "eli": "http://data.europa.eu/eli/ontology#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfa": "http://www.w3.org/ns/rdfa#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "snomed": "http://purl.bioontology.org/ontology/SNOMEDCT/",
+        "void": "http://rdfs.org/ns/void#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "ctsa": "http://discovery.biothings.io/schema/ctsa"
+    },
+    "@graph": [
+        {
+            "@id": "ctsa:EducationalResource",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A schema describing Educational Resource",
+            "rdfs:label": "EducationalResource",
+            "rdfs:subClassOf": {
+                "@id": "schema:CreativeWork"
+            },
+            "$validation": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {
+                    "nane": {
+                        "//": "the starting of inherented fields from schema:CreativeWork",
+                        "description": "The name of the educational resource",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the educational resource",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "URL of the item.",
+                        "type": "string"
+                    },
+                    "sameAs": {
+                        "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                        "type": "string"
+                    },
+                    "keywords": {
+                        "description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "datePublished": {
+                        "description": "Date of first broadcast/publication.",
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "string",
+                                "format": "date"
+                            }
+                        ]
+                    },
+                    "dateModified": {
+                        "description": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "string",
+                                "format": "date"
+                            }
+                        ]
+                    },
+                    "author": {
+                        "description": "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
+                        "type": "string"
+                    },
+                    "publisher": {
+                        "description": "The publisher of the creative work.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "The version of the CreativeWork embodied by a specified resource.",
+                        "type": "string"
+                    },
+                    "identifier": {
+                        "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+                        "type": "string"
+                    },
+                    "sourceCode": {
+                        "//": "the starting of new fields added to schema:EducationalResource",
+                        "type": "object",
+                        "properties": {
+                            "codeRepository": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "name",
+                    "description"
+                ]
+            }
+        },
+        {
+            "@id": "ctsa:sourceCode",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.",
+            "rdfs:label": "sourceCode",
+            "schema:domainIncludes": [
+                {
+                    "@id": "ctsa:EducationalResource"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "schema:SoftwareSourceCode"
+                }
+            ]
+        }
+    ]
+}
