@@ -1,0 +1,206 @@
+{
+    "@context": {
+        "schema": "http://schema.org/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "bts": "http://schema.biothings.io/"
+    },
+    "@graph": [
+        {
+            "@id": "bts:CTSADataset",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A schema describing Dataset from CTSA center",
+            "rdfs:label": "CTSADataset",
+            "rdfs:subClassOf": {
+                "@id": "schema:Dataset"
+            },
+            "$validation": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "$comment": "the starting of inherented fields from schema:Dataset",
+                        "description": "The name of the CTSA Dataset",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the CTSA Dataset",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "URL of the Dataset page if available.",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "sameAs": {
+                        "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                        "type": "string"
+                    },
+                    "keywords": {
+                        "description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "datePublished": {
+                        "description": "Date of first publication of this dataset.",
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "string",
+                                "format": "date"
+                            }
+                        ]
+                    },
+                    "dateModified": {
+                        "description": "The date on which the dataset was most recently modified.",
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "type": "string",
+                                "format": "date"
+                            }
+                        ]
+                    },
+                    "version": {
+                        "description": "The version of the dataset.",
+                        "type": "string"
+                    },
+                    "identifier": {
+                        "description": "The identifier of the dataset if available, e.g. ID from repositories GEO, EGA.",
+                        "type": "string"
+                    },
+                    "measurementTechnique": {
+                        "description": "The technique or method used to produce the Dataset.",
+                        "enum": [
+                            "whole-genome sequencing",
+                            "whole-exome sequencing",
+                            "mass spectrum"
+                        ]
+                    },
+                    "creator": {
+                        "description": "The creater (often the primary contact) of this dataset.",
+                        "$ref": "#/definitions/person"
+                    },
+                    "contributor": {
+                        "description": "The other contributor(s) of this dataset, besides the creator",
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/person"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/definitions/person"
+                                }
+                            }
+                        ]
+                    },
+                    "publisher": {
+                        "description": "The organization publish this dataset, usually the host institute.",
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "url":{
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        },
+                        "required": ["name"]
+                    },
+                    "license": {
+                        "description": "Specify the data access license",
+                        "type": "object",
+                        "properties": {
+                            "text": {
+                                "type": "string"
+                            },
+                            "url":{
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        },
+                        "required": ["url"]
+                    },
+                    "citation": {
+                        "description": "The citation of this dataset.",
+                        "type": "object",
+                        "properties": {
+                            "text": {
+                                "type": "string"
+                            },
+                            "url":{
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "identifier": {
+                                "type": "string",
+                                "description": "use PubMed id here"
+                            }
+                        },
+                        "required": ["text"]
+                    },
+                    "includedInDataCatalog": {
+                        "description": "This is a fixed CTSA DataCatalog.",
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "const": "CTSA Datasets"
+                            },
+                            "url":{
+                                "const": "https://ctsa.ncats.nih.gov/cd2h/"
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "name",
+                    "description",
+                    "creator",
+                    "publisher"
+                ],
+                "definitions": {
+                    "person": {
+                        "description": "Reusable person definition",
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "url":{
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        },
+                        "required": ["name"]
+                    }
+                }
+            }
+        },
+        {
+            "@id": "cvisb:sourceCode",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.",
+            "rdfs:label": "sourceCode",
+            "schema:domainIncludes": [
+                {
+                    "@id": "bts:CTSADataset"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "schema:SoftwareSourceCode"
+                }
+            ]
+        }
+    ]
+}
