@@ -1,27 +1,42 @@
 {
     "@context": {
         "schema": "http://schema.org/",
+        "bibo": "http://purl.org/ontology/bibo/",
+        "dc": "http://purl.org/dc/elements/1.1/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "dct": "http://purl.org/dc/terms/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dctype": "http://purl.org/dc/dcmitype/",
+        "eli": "http://data.europa.eu/eli/ontology#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "owl": "http://www.w3.org/2002/07/owl#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfa": "http://www.w3.org/ns/rdfa#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "snomed": "http://purl.bioontology.org/ontology/SNOMEDCT/",
+        "void": "http://rdfs.org/ns/void#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "xsd1": "hhttp://www.w3.org/2001/XMLSchema#",
         "cvisb": "https://data.cvisb.org/schema/"
     },
     "@graph": [
         {
-            "@id": "cvisb:CvisbDataset",
+            "@id": "cvisb:Dataset",
             "@type": "rdfs:Class",
             "rdfs:comment": "A schema describing Dataset in the Center for Viral Systems Biology",
-            "rdfs:label": "CvisbDataset",
+            "rdfs:label": "Dataset",
             "rdfs:subClassOf": {
                 "@id": "schema:Dataset"
             },
             "$validation": {
                 "$schema": "http://json-schema.org/draft-07/schema#",
-                "title": "CvisbDataset",
+                "title": "Dataset",
                 "description": "A schema describing Dataset in the Center for Viral Systems Biology",
                 "type": "object",
                 "properties": {
                     "name": {
-                        "$comment": "the starting of inherented fields from schema:Dataset",
+                        "//": "the starting of inherented fields from schema:Dataset",
                         "description": "The name of the Cvisb Dataset",
                         "type": "string"
                     },
@@ -112,7 +127,7 @@
                         "type": "string"
                     },
                     "sourceCode": {
-                        "$comment": "the starting of new fields added to schema:Dataset",
+                        "//": "the starting of new fields added to schema:Dataset",
                         "type": "object",
                         "properties": {
                             "codeRepository": {
@@ -141,7 +156,7 @@
             "rdfs:label": "sourceCode",
             "schema:domainIncludes": [
                 {
-                    "@id": "cvisb:CvisbDataset"
+                    "@id": "cvisb:Dataset"
                 }
             ],
             "schema:rangeIncludes": [
