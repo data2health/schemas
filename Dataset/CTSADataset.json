@@ -3,7 +3,7 @@
         "schema": "http://schema.org/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "bts": "http://schema.biothings.io/"
+        "bts": "http://discovery.biothings.io/bts/"
     },
     "@graph": [
         {
@@ -149,6 +149,9 @@
                         },
                         "required": ["text"]
                     },
+                    "samples": {
+                        "description": "sample info of this dataset."
+                    },
                     "includedInDataCatalog": {
                         "description": "This is a fixed CTSA DataCatalog.",
                         "type": "object",
@@ -187,20 +190,182 @@
             }
         },
         {
-            "@id": "cvisb:sourceCode",
+            "@id": "bts:samples",
             "@type": "rdf:Property",
-            "rdfs:comment": "Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.",
-            "rdfs:label": "sourceCode",
-            "schema:domainIncludes": [
-                {
+            "rdfs:comment": "Sample information including size, organism, tissus, etc.",
+            "rdfs:label": "samples",
+            "schema:domainIncludes": {
                     "@id": "bts:CTSADataset"
+            },
+            "schema:rangeIncludes": {
+                    "@id": "bts:DataSamples"
+            }
+        },
+        {
+            "@id": "bts:funder",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Funder information",
+            "rdfs:label": "sample",
+            "schema:domainIncludes": {
+                "@id": "bts:CTSADataset"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:BioMedicalGrant"
+            }
+        },
+        {
+            "@id": "bts:DataSamples",
+            "@type": "rdf:Class",
+            "rdfs:comment": "Sample information including size, organism, tissue, etc.",
+            "rdfs:label": "DataSamples",
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            },
+            "$validation": {
+                "type": "object",
+                "properties": {
+                    "size": {
+                        "description": "the number of samples",
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "organism": {
+                        "description": "the organism of samples come from",
+                        "oneOf":[
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "tissue": {
+                        "description": "the tissue of samples come from",
+                        "oneOf":[
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    }
                 }
-            ],
-            "schema:rangeIncludes": [
-                {
-                    "@id": "schema:SoftwareSourceCode"
+            }
+        },
+        {
+            "@id": "bts:size",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Sample size",
+            "rdfs:label": "size",
+            "schema:domainIncludes": {
+                "@id": "bts:DataSamples"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            }
+        },
+        {
+            "@id": "bts:organism",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Sample organism",
+            "rdfs:label": "organism",
+            "schema:domainIncludes": {
+                "@id": "bts:DataSamples"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            }
+        },
+        {
+            "@id": "bts:tissue",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Sample tissue",
+            "rdfs:label": "organism",
+            "schema:domainIncludes": {
+                "@id": "bts:DataSamples"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            }
+        },
+        {
+            "@id": "bts:BioMedicalGrant",
+            "@type": "rdf:Class",
+            "rdfs:comment": "BioMedical Grant information, typically from NIH or NSF",
+            "rdfs:label": "BioMedicalGrant",
+            "rdfs:subClassOf": {
+                "@id": "schema:Grant"
+            },
+            "$validation": {
+                "type": "object",
+                "properties": {
+                    "identifier": {
+                        "description": "the grant identifier, grant number or FAIN",
+                        "type": "string"
+                    },
+                    "institute": {
+                        "description": "The name of the funding institute, e.g. NIH or NSF",
+                        "oneOf":[
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "agency": {
+                        "description": "The agency under the funding institute, e.g. NCATS, NHGRI, NCI etc.",
+                        "oneOf":[
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    }
                 }
-            ]
+            }
+        },
+        {
+            "@id": "bts:institute",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The name of the funding institute, e.g. NIH or NSF",
+            "rdfs:label": "institute",
+            "schema:domainIncludes": {
+                "@id": "bts:BioMedicalGrant"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            }
+        },
+        {
+            "@id": "bts:agency",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The agency under the funding institute, e.g. NCATS, NHGRI, NCI etc.",
+            "rdfs:label": "agency",
+            "schema:domainIncludes": {
+                "@id": "bts:BioMedicalGrant"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            }
         }
+
     ]
 }
