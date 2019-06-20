@@ -152,6 +152,9 @@
                     "samples": {
                         "description": "sample info of this dataset."
                     },
+                    "funder": {
+                        "description": "funder info of this dataset."
+                    },
                     "includedInDataCatalog": {
                         "description": "This is a fixed CTSA DataCatalog.",
                         "type": "object",
@@ -205,7 +208,7 @@
             "@id": "bts:funder",
             "@type": "rdf:Property",
             "rdfs:comment": "Funder information",
-            "rdfs:label": "sample",
+            "rdfs:label": "funder",
             "schema:domainIncludes": {
                 "@id": "bts:CTSADataset"
             },
@@ -215,7 +218,7 @@
         },
         {
             "@id": "bts:DataSamples",
-            "@type": "rdf:Class",
+            "@type": "rdfs:Class",
             "rdfs:comment": "Sample information including size, organism, tissue, etc.",
             "rdfs:label": "DataSamples",
             "rdfs:subClassOf": {
@@ -288,7 +291,7 @@
             "@id": "bts:tissue",
             "@type": "rdf:Property",
             "rdfs:comment": "Sample tissue",
-            "rdfs:label": "organism",
+            "rdfs:label": "tissue",
             "schema:domainIncludes": {
                 "@id": "bts:DataSamples"
             },
@@ -298,7 +301,7 @@
         },
         {
             "@id": "bts:BioMedicalGrant",
-            "@type": "rdf:Class",
+            "@type": "rdfs:Class",
             "rdfs:comment": "BioMedical Grant information, typically from NIH or NSF",
             "rdfs:label": "BioMedicalGrant",
             "rdfs:subClassOf": {
