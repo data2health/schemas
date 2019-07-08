@@ -1308,6 +1308,24 @@
             }
         },
         {
+            "@id": "bts:dbsnp",
+            "@type": "rdf:Property",
+            "rdfs:comment": "dbsnp ID",
+            "rdfs:label": "dbsnp",
+            "schema:domainIncludes": {
+                "@id": "bts:SequenceVariant"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
             "@id": "bts:inchi",
             "@type": "rdf:Property",
             "rdfs:comment": "Inchi for chemical",
