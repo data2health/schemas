@@ -1149,6 +1149,42 @@
             }
         },
         {
+            "@id": "bts:reactome",
+            "@type": "rdf:Property",
+            "rdfs:comment": "reactome ID",
+            "rdfs:label": "reactome",
+            "schema:domainIncludes": {
+                "@id": "bts:Pathway"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:go",
+            "@type": "rdf:Property",
+            "rdfs:comment": "gene ontology ID",
+            "rdfs:label": "go",
+            "schema:domainIncludes": {
+                "@id": "bts:BiologicalProcessOrActivity"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
             "@id": "bts:symbol",
             "@type": "rdf:Property",
             "rdfs:comment": "gene symbol",
