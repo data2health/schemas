@@ -1326,6 +1326,24 @@
             }
         },
         {
+            "@id": "bts:pdb",
+            "@type": "rdf:Property",
+            "rdfs:comment": "PDB ID",
+            "rdfs:label": "pdb",
+            "schema:domainIncludes": {
+                "@id": "bts:ProteinStructure"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
             "@id": "bts:dbsnp",
             "@type": "rdf:Property",
             "rdfs:comment": "dbsnp ID",
