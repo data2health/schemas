@@ -776,10 +776,10 @@
             }
         },
         {
-            "@id": "bts:Wikipathway",
+            "@id": "bts:Wikipathways",
             "@type": "rdfs:Class",
             "rdfs:comment": null,
-            "rdfs:label": "Wikipathway",
+            "rdfs:label": "Wikipathways",
             "rdfs:subClassOf": {
                 "@id": "bts:Pathway"
             },
@@ -788,10 +788,10 @@
             }
         },
         {
-            "@id": "bts:ReactomePathway",
+            "@id": "bts:Reactome",
             "@type": "rdfs:Class",
             "rdfs:comment": null,
-            "rdfs:label": "ReactomePathway",
+            "rdfs:label": "Reactome",
             "rdfs:subClassOf": {
                 "@id": "bts:Pathway"
             },
@@ -1154,7 +1154,7 @@
             "rdfs:comment": "reactome ID",
             "rdfs:label": "reactome",
             "schema:domainIncludes": {
-                "@id": "bts:Pathway"
+                "@id": "bts:Reactome"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
@@ -1664,7 +1664,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "bts:Wikipathway"
+                "@id": "bts:Wikipathways"
             },
             "rdfs:subPropertyOf": {
                 "@id": "bts:involvedInPathway"
@@ -1682,7 +1682,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "bts:ReactomePathway"
+                "@id": "bts:Reactome"
             },
             "rdfs:subPropertyOf": {
                 "@id": "bts:involvedInPathway"
