@@ -1635,10 +1635,10 @@
             }
         },
         {
-            "@id": "bts:involvedInWikipathway",
+            "@id": "bts:involvedInWikipathways",
             "@type": "rdf:Property",
             "rdfs:comment": "An interaction between a biological entity and a wikipathway",
-            "rdfs:label": "involvedInWikipathway",
+            "rdfs:label": "involvedInWikipathways",
             "schema:domainIncludes": {
                 "@id": "bts:GeneOrGeneProduct"
             },
@@ -1653,10 +1653,10 @@
             }
         },
         {
-            "@id": "bts:involvedInReactomePathway",
+            "@id": "bts:involvedInReactome",
             "@type": "rdf:Property",
             "rdfs:comment": "An interaction between a biological entity and a reactome pathway",
-            "rdfs:label": "involvedInReactomePathway",
+            "rdfs:label": "involvedInReactome",
             "schema:domainIncludes": {
                 "@id": "bts:GeneOrGeneProduct"
             },
