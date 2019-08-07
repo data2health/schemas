@@ -1253,7 +1253,7 @@
                     "@id": "bts:Gene"
                 },
                 {
-                    "@id": "bts:Disease"
+                    "@id": "bts:DiseaseOrPhenotypicFeature"
                 }
             ],
             "schema:isPartOf": {
@@ -1276,7 +1276,10 @@
                     "@id": "bts:Gene"
                 },
                 {
-                    "@id": "bts:Disease"
+                    "@id": "bts:DiseaseOrPhenotypicFeature"
+                },
+                {
+                    "@id": "bts:ChemicalSubstance"
                 }
             ],
             "schema:isPartOf": {
@@ -1295,7 +1298,169 @@
             "rdfs:comment": "snomed ID",
             "rdfs:label": "snomed",
             "schema:domainIncludes": {
-                "@id": "bts:Disease"
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:mondo",
+            "@type": "rdf:Property",
+            "rdfs:comment": "mondo ID",
+            "rdfs:label": "mondo",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:doid",
+            "@type": "rdf:Property",
+            "rdfs:comment": "disease ontology ID",
+            "rdfs:label": "doid",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:bfo",
+            "@type": "rdf:Property",
+            "rdfs:comment": "bfo ID",
+            "rdfs:label": "bfo",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:cohd",
+            "@type": "rdf:Property",
+            "rdfs:comment": "cohd ID",
+            "rdfs:label": "cohd",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:hp",
+            "@type": "rdf:Property",
+            "rdfs:comment": "hp ID",
+            "rdfs:label": "hp",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:kegg",
+            "@type": "rdf:Property",
+            "rdfs:comment": "kegg ID",
+            "rdfs:label": "kegg",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:meddra",
+            "@type": "rdf:Property",
+            "rdfs:comment": "meddra ID",
+            "rdfs:label": "meddra",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:medgen",
+            "@type": "rdf:Property",
+            "rdfs:comment": "medgen ID",
+            "rdfs:label": "medgen",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:mesh",
+            "@type": "rdf:Property",
+            "rdfs:comment": "mesh ID",
+            "rdfs:label": "mesh",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
@@ -1743,6 +1908,70 @@
             }
         },
         {
+            "@id": "bts:causes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Specifying a cause of something in general. e.g in medicine , one of the causative agent(s) that are most directly responsible for the pathophysiologic process that eventually results in the occurrence.",
+            "rdfs:label": "causes",
+            "schema:domainIncludes": [
+                {
+                    "@id": "bts:ChemicalSubstance"
+                },
+                {
+                    "@id": "bts:GeneOrGeneProduct"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:causedBy"
+            }
+        },
+        {
+            "@id": "bts:causedBy",
+            "@type": "rdf:Property",
+            "rdfs:comment": "A condition caused by something",
+            "rdfs:label": "causedBy",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:ChemicalSubstance"
+                },
+                {
+                    "@id": "bts:GeneOrGeneProduct"
+                }
+            ],
+            "schema:inverseOf": {
+                "@id": "bts:causes"
+            }
+        },
+        {
+            "@id": "bts:associatedWith",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Has a relationship to",
+            "rdfs:label": "associatedWith",
+            "schema:domainIncludes": {
+                "@id": "bts:BiologicalEntity"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:BiologicalEntity"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:associatedWith"
+            }
+        },
+        {
             "@id": "bts:contraindication",
             "@type": "rdf:Property",
             "rdfs:comment": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it might cause side effect",
@@ -1755,6 +1984,27 @@
             },
             "schema:rangeIncludes": {
                 "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:contraindicatedBy"
+            }
+        },
+        {
+            "@id": "bts:contraindicatedBy",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it might cause side effect",
+            "rdfs:label": "contraindicatedBy",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:contraindication"
             }
         },
         {
