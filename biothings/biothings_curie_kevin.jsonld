@@ -2022,7 +2022,7 @@
                 "@id": "bts:ChemicalSubstance"
             },
             "schema:inverseOf": {
-                "@id": "bts:potentialUse"
+                "@id": "bts:treats"
             }
         },
         {
