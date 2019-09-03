@@ -24,7 +24,7 @@
     "text": "Custom Data Access Agreement",
     "url": "https://redcapstsi.scripps.edu/redcap/surveys/?s=NT4N7A3KJD"
   },
-  "Sameas": "https://www.ebi.ac.uk/ega/datasets/EGAD00001003941",
+  "sameAs": "https://www.ebi.ac.uk/ega/datasets/EGAD00001003941",
   "measurementTechnique": "whole-genome sequencing",
   "publisher": {
     "@type": "Organization",
