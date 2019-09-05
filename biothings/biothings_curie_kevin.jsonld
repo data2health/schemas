@@ -1154,7 +1154,7 @@
             "rdfs:comment": "reactome ID",
             "rdfs:label": "reactome",
             "schema:domainIncludes": {
-                "@id": "bts:Reactome"
+                "@id": "bts:Pathway"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
@@ -1280,6 +1280,9 @@
                 },
                 {
                     "@id": "bts:ChemicalSubstance"
+                },
+                {
+                    "@id": "bts:AnatomicalEntity"
                 }
             ],
             "schema:isPartOf": {
