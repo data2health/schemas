@@ -2059,13 +2059,13 @@
             "rdfs:comment": null,
             "rdfs:label": "molecularlyInteractsWith",
             "schema:domainIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:inverseOf": {
                 "@id": "bts:molecularlyInteractsWith"
