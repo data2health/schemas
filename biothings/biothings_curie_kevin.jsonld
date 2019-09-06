@@ -2066,6 +2066,9 @@
             },
             "schema:rangeIncludes": {
                 "@id": "bts:MolecularEntity"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:molecularlyInteractsWith"
             }
         },
         {
@@ -2156,6 +2159,27 @@
             },
             "schema:rangeIncludes": {
                 "@id": "bts:MolecularEntity"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:activityIncreasedBy"
+            }
+        },
+        {
+            "@id": "bts:activityIncreasedBy",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between two molecular entities where the action or effect of one is increased by the activity of the other within a system of interest",
+            "rdfs:label": "activityIncreasedBy",
+            "schema:domainIncludes": {
+                "@id": "bts:MolecularEntity"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:MolecularEntity"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:increasesActivityOf"
             }
         },
         {
@@ -2171,6 +2195,27 @@
             },
             "schema:rangeIncludes": {
                 "@id": "bts:MolecularEntity"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:activityDecreasedBy"
+            }
+        },
+        {
+            "@id": "bts:activityDecreasedBy",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between two molecular entities where the action or effect of one is decreased by the activity of the other within a system of interest",
+            "rdfs:label": "activityDecreasedBy",
+            "schema:domainIncludes": {
+                "@id": "bts:MolecularEntity"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:MolecularEntity"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:decreasesActivityOf"
             }
         },
         {
