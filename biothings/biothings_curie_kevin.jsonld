@@ -1271,20 +1271,9 @@
             "@type": "rdf:Property",
             "rdfs:comment": "Refseq ID for gene, protein or transcript",
             "rdfs:label": "umls",
-            "schema:domainIncludes": [
-                {
-                    "@id": "bts:Gene"
-                },
-                {
-                    "@id": "bts:DiseaseOrPhenotypicFeature"
-                },
-                {
-                    "@id": "bts:ChemicalSubstance"
-                },
-                {
-                    "@id": "bts:AnatomicalEntity"
-                }
-            ],
+            "schema:domainIncludes": {
+                "@id": "bts:BiologicalEntity"
+            },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
