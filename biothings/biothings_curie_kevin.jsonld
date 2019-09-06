@@ -2107,13 +2107,13 @@
             "rdfs:comment": "holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest",
             "rdfs:label": "increasesAbundanceOf",
             "schema:domainIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             }
         },
         {
@@ -2122,13 +2122,13 @@
             "rdfs:comment": "holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest",
             "rdfs:label": "decreasesAbundanceOf",
             "schema:domainIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             }
         },
         {
@@ -2137,13 +2137,13 @@
             "rdfs:comment": "holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest",
             "rdfs:label": "affectsActivityOf",
             "schema:domainIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             }
         },
         {
@@ -2152,13 +2152,13 @@
             "rdfs:comment": "holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest",
             "rdfs:label": "increasesActivityOf",
             "schema:domainIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:inverseOf": {
                 "@id": "bts:activityIncreasedBy"
@@ -2170,13 +2170,13 @@
             "rdfs:comment": "holds between two molecular entities where the action or effect of one is increased by the activity of the other within a system of interest",
             "rdfs:label": "activityIncreasedBy",
             "schema:domainIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:inverseOf": {
                 "@id": "bts:increasesActivityOf"
@@ -2188,13 +2188,13 @@
             "rdfs:comment": "holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest",
             "rdfs:label": "decreasesActivityOf",
             "schema:domainIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:inverseOf": {
                 "@id": "bts:activityDecreasedBy"
@@ -2206,13 +2206,13 @@
             "rdfs:comment": "holds between two molecular entities where the action or effect of one is decreased by the activity of the other within a system of interest",
             "rdfs:label": "activityDecreasedBy",
             "schema:domainIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "schema:rangeIncludes": {
-                "@id": "bts:MolecularEntity"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:inverseOf": {
                 "@id": "bts:decreasesActivityOf"
