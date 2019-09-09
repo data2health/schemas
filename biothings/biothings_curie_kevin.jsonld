@@ -1795,6 +1795,27 @@
             },
             "schema:rangeIncludes": {
                 "@id": "bts:MolecularActivity"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:enabledBy"
+            }
+        },
+        {
+            "@id": "bts:enabledBy",
+            "@type": "rdf:Property",
+            "rdfs:comment": "GO molecular function enabled by the gene/protein.",
+            "rdfs:label": "enablesMF",
+            "schema:domainIncludes": {
+                "@id": "bts:MolecularActivity"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:enablesMF"
             }
         },
         {
@@ -1810,6 +1831,27 @@
             },
             "schema:rangeIncludes": {
                 "@id": "bts:BiologicalProcess"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:bpHasParticipants"
+            }
+        },
+        {
+            "@id": "bts:bpHasParticipants",
+            "@type": "rdf:Property",
+            "rdfs:comment": "GO biological process this gene/protein is involved in.",
+            "rdfs:label": "bpHasParticipants",
+            "schema:domainIncludes": {
+                "@id": "bts:BiologicalProcess"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:involvedInBP"
             }
         },
         {
@@ -1825,6 +1867,27 @@
             },
             "schema:rangeIncludes": {
                 "@id": "bts:Pathway"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:pathwayHasParticipants"
+            }
+        },
+        {
+            "@id": "bts:pathwayHasParticipants",
+            "@type": "rdf:Property",
+            "rdfs:comment": "An interaction between a biological entity and a pathway",
+            "rdfs:label": "pathwayHasParticipants",
+            "schema:domainIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:Pathway"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:involvedInPathway"
             }
         },
         {
@@ -2948,6 +3011,28 @@
             "schema:rangeIncludes": 
             {
                 "@id": "bts:Transcript"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:transcribedFrom"
+            }
+        },
+        {
+            "@id": "bts:transcribedFrom",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between a gene and a gene transcript",
+            "rdfs:label": "transcribedFrom",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": 
+            {
+                "@id": "bts:Transcript"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:hasTranscript"
             }
         },
         {
