@@ -1057,6 +1057,24 @@
             }
         },
         {
+            "@id": "bts:uberon",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Uberon ID for anatomy",
+            "rdfs:label": "uberon",
+            "schema:domainIncludes": {
+                "@id": "bts:AnatomicalEntity"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
             "@id": "bts:inTaxon",
             "@type": "rdf:Property",
             "rdfs:comment": "connects a thing to a class representing a taxon",
