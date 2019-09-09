@@ -1537,6 +1537,24 @@
             }
         },
         {
+            "@id": "bts:clinvar",
+            "@type": "rdf:Property",
+            "rdfs:comment": "clinvar Variant ID",
+            "rdfs:label": "clinvar",
+            "schema:domainIncludes": {
+                "@id": "bts:SequenceVariant"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
             "@id": "bts:inchi",
             "@type": "rdf:Property",
             "rdfs:comment": "Inchi for chemical",
@@ -2114,6 +2132,42 @@
             },
             "schema:inverseOf": {
                 "@id": "bts:geneAssociatedWithVariant"
+            }
+        },
+        {
+            "@id": "bts:variantAssociatedWithCondition",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between a variant and a condition",
+            "rdfs:label": "variantAssociatedWithCondition",
+            "schema:domainIncludes": {
+                "@id": "bts:SequenceVariant"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:conditionAssociatedWithVariant"
+            }
+        },
+        {
+            "@id": "bts:conditionAssociatedWithVariant",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between a variant and a condition",
+            "rdfs:label": "conditionAssociatedWithVariant",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:SequenceVariant"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:variantAssociatedWithCondition"
             }
         },
         {
