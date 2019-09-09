@@ -1804,7 +1804,7 @@
             "@id": "bts:enabledBy",
             "@type": "rdf:Property",
             "rdfs:comment": "GO molecular function enabled by the gene/protein.",
-            "rdfs:label": "enablesMF",
+            "rdfs:label": "enabledBy",
             "schema:domainIncludes": {
                 "@id": "bts:MolecularActivity"
             },
