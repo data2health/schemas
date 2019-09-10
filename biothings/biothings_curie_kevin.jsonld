@@ -1291,7 +1291,7 @@
             "rdfs:label": "orphanet",
             "schema:domainIncludes": {
                 "@id": "bts:DiseaseOrPhenotypicFeature"
-            }
+            },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
