@@ -1264,7 +1264,7 @@
         {
             "@id": "bts:omim",
             "@type": "rdf:Property",
-            "rdfs:comment": "Refseq ID for gene, protein or transcript",
+            "rdfs:comment": "omim ID for gene, or disease",
             "rdfs:label": "omim",
             "schema:domainIncludes": [
                 {
@@ -1274,6 +1274,24 @@
                     "@id": "bts:DiseaseOrPhenotypicFeature"
                 }
             ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Integer"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:orphanet",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Orphanet ID for disease",
+            "rdfs:label": "orphanet",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            }
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
