@@ -1487,9 +1487,14 @@
             "@type": "rdf:Property",
             "rdfs:comment": "mesh ID",
             "rdfs:label": "mesh",
-            "schema:domainIncludes": {
-                "@id": "bts:DiseaseOrPhenotypicFeature"
-            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "bts:DiseaseOrPhenotypicFeature"
+                },
+                {
+                    "@id": "bts:ChemicalSubstance"
+                }
+            ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
