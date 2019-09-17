@@ -1896,6 +1896,42 @@
             }
         },
         {
+            "@id": "bts:involvedInCC",
+            "@type": "rdf:Property",
+            "rdfs:comment": "GO cellular component this gene/protein is involved in.",
+            "rdfs:label": "involvedInCC",
+            "schema:domainIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:CellularComponent"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:ccHasParticipants"
+            }
+        },
+        {
+            "@id": "bts:ccHasParticipants",
+            "@type": "rdf:Property",
+            "rdfs:comment": "GO cellular component this gene/protein is involved in.",
+            "rdfs:label": "ccHasParticipants",
+            "schema:domainIncludes": {
+                "@id": "bts:CellularComponent"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:GeneOrGeneProduct"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:involvedInCC"
+            }
+        },
+        {
             "@id": "bts:involvedInPathway",
             "@type": "rdf:Property",
             "rdfs:comment": "An interaction between a biological entity and a pathway",
