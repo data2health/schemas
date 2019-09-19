@@ -1075,6 +1075,42 @@
             }
         },
         {
+            "@id": "bts:cl",
+            "@type": "rdf:Property",
+            "rdfs:comment": "CL ID for anatomy",
+            "rdfs:label": "cl",
+            "schema:domainIncludes": {
+                "@id": "bts:AnatomicalEntity"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:fbbt",
+            "@type": "rdf:Property",
+            "rdfs:comment": "FBbt ID for anatomy",
+            "rdfs:label": "fbbt",
+            "schema:domainIncludes": {
+                "@id": "bts:AnatomicalEntity"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
             "@id": "bts:inTaxon",
             "@type": "rdf:Property",
             "rdfs:comment": "connects a thing to a class representing a taxon",
@@ -1415,6 +1451,24 @@
             "@type": "rdf:Property",
             "rdfs:comment": "hp ID",
             "rdfs:label": "hp",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:efo",
+            "@type": "rdf:Property",
+            "rdfs:comment": "EFO ID",
+            "rdfs:label": "efo",
             "schema:domainIncludes": {
                 "@id": "bts:DiseaseOrPhenotypicFeature"
             },
