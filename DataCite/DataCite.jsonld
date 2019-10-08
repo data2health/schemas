@@ -1,0 +1,349 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://discovery.biothings.io/"
+  },
+  "@graph": [{
+      "@id": "bts:DataCite",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "some description about this class",
+      "rdfs:label": "DataCite",
+      "rdfs:subClassOf": "schema:Dataset",
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "titles": {
+            "description": "the title of the item",
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "description": "title of the publication"
+              }
+            }
+          },
+          "dates": {
+            "description": "a list of dates",
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "date",
+                "description": "date of publications"
+              },
+              "dateType": {
+                "type": "string",
+                "description": "type of date"
+              }
+            }
+          },
+          "formats": {
+            "description": "types of formats",
+            "type": "string"
+          },
+          "sizes": {
+            "description": "list of sizes",
+            "type": "number"
+          },
+          "publicationYear": {
+            "description": "year dataset was published",
+            "type": "string"
+          },
+          "subjects": {
+            "description": "types of formats",
+            "type": "string"
+          },
+          "resourceType": {
+            "description": "type of resource",
+            "type": "string"
+          },
+          "resourceTypeGeneral": {
+            "description": "general type of resource",
+            "type": "string"
+          },
+          "identifiers": {
+            "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+            "type": "object",
+            "properties": {
+              "identifier": {
+                "type": "string",
+                "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details."
+              },
+              "identifierType": {
+                "type": "string",
+                "description": "type of identifier"
+              }
+            }
+          },
+          "descriptions": {
+            "description": "a list of descriptions",
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string",
+                "description": "description about the item"
+              },
+              "descriptionType": {
+                "type": "string",
+                "description": "type of description"
+              }
+            }
+          },
+          "geoLocation": {
+            "description": "a list of places of ocurrence",
+            "type": "object",
+            "properties": {
+              "geoLocationPlace": {
+                "type": "string",
+                "description": "place of ocurrence"
+              },
+            }
+          },
+          "fundingReference": {
+            "description": "a list of descriptions",
+            "type": "object",
+            "properties": {
+              "funderName": {
+                "type": "string",
+                "description": "name of person or organization"
+              },
+              "awardNumber": {
+                "type": "string",
+                "description": "number of award"
+              },
+              "awardURI": {
+                "type": "string",
+                "description": "url of the award"
+              },
+              "awardTitle": {
+                "type": "string",
+                "description": "title of the award"
+              }
+            }
+          },
+          "rightsList": {
+            "description": "list of licenses and rights",
+            "type": "object",
+            "properties": {
+              "rights": {
+                "type": "string",
+                "description": "title of the license"
+              },
+              "rightsURI": {
+                "type": "url",
+                "description": "url of the license"
+              }
+            }
+          },
+          "publisher": {
+            "description": "The publisher of the creative work.",
+            "type": "object"
+          },
+          "contributors": {
+            "description": "A secondary contributor to the CreativeWork or Event.",
+            "type": "object"
+          },
+          "version": {
+            "description": "The version of the CreativeWork embodied by a specified resource.",
+            "type": "string"
+          },
+          "creators": {
+            "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+            "type": "object"
+          },
+        },
+        "required": [
+          "titles",
+          "resourceType",
+          "resourceTypeGeneral",
+          "identifiers",
+          "publisher",
+          "creator",
+          "publicationYear",
+        ]
+      }
+    },
+    {
+      "@id": "bts:titles",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "the title of the item",
+      "rdfs:label": "titles",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    },
+    {
+      "@id": "bts:publicationYear",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "year of publication",
+      "rdfs:label": "publicationYear",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    },
+    {
+      "@id": "bts:dates",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "a list of dates",
+      "rdfs:label": "dates",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Date"
+      }]
+    },
+    {
+      "@id": "bts:descriptions",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "a list of descriptions",
+      "rdfs:label": "descriptions",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Thing"
+      }]
+    },
+    {
+      "@id": "bts:contributors",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "a list of contributors",
+      "rdfs:label": "contributors",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Person"
+      }]
+    },
+    {
+      "@id": "bts:creators",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "a list of creators",
+      "rdfs:label": "contributors",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Person"
+      }]
+    },
+    {
+      "@id": "bts:descriptioType",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "what type of description",
+      "rdfs:label": "descriptioType",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    },
+    {
+      "@id": "bts:formats",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "type of format",
+      "rdfs:label": "formats",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    },
+    {
+      "@id": "bts:fundingReference",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "description",
+      "rdfs:label": "fundingReference",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:MonetaryGrant"
+      }]
+    },
+    {
+      "@id": "bts:subjects",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "description",
+      "rdfs:label": "subjects",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    },
+    {
+      "@id": "bts:rightsList",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "description",
+      "rdfs:label": "rightsList",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    },
+    {
+      "@id": "bts:resourceType",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "type of resource",
+      "rdfs:label": "resourceType",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    },
+    {
+      "@id": "bts:resourceTypeGeneral",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "general type of resource",
+      "rdfs:label": "resourceTypeGeneral",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    },
+    {
+      "@id": "bts:sizes",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "description",
+      "rdfs:label": "sizes",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Integer"
+      }]
+    },
+    {
+      "@id": "bts:geoLocation",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "description",
+      "rdfs:label": "geoLocation",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Text"
+      }]
+    }
+  ]
+}

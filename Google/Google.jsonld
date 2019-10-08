@@ -1,0 +1,151 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bts": "http://discovery.biothings.io/bts/"
+  },
+  "@graph": [{
+    "@id": "bts:Google",
+    "@type": "rdfs:Class",
+    "rdfs:comment": "A body of structured information describing some topic(s) of interest.",
+    "rdfs:label": "Dataset",
+    "rdfs:subClassOf": {
+      "@id": "schema:Dataset"
+    },
+    "$validation": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "A descriptive name of a dataset.",
+          "type": "string"
+        },
+        "alternateName": {
+          "description": "Alternative names that have been used to refer to this dataset, such as aliases or abbreviations. ",
+          "type": "string"
+        },
+        "description": {
+          "description": "A short summary describing a dataset.",
+          "type": "string"
+        },
+        "distribution": {
+          "description": "The description of the location for download of the dataset and the file format for download.",
+          "type": "string"
+        },
+        "url": {
+          "description": "Location of a page describing the dataset.",
+          "type": "string",
+          "format": "uri"
+        },
+        "sameAs": {
+          "description": "URL of a reference Web page that unambiguously indicates the dataset's identity, usually in a different repository.",
+          "type": "string"
+        },
+        "keywords": {
+          "description": "Keywords summarizing the dataset.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "version": {
+          "description": "The version number for the dataset.",
+          "type": "string"
+        },
+        "temporalCoverage": {
+          "description": "The data in the dataset covers a specific time interval. Only include this property if the dataset has a temporal dimension. Schema.org uses the ISO 8601 standard to describe time intervals and time points. You can describe dates differently depending upon the dataset interval. Indicate open-ended intervals with two decimal points (..).",
+          "type": "string"
+        },
+        "variableMeasured": {
+          "description": "The variable that this dataset measures. For example, temperature or pressure.",
+          "type": "string"
+        },
+        "identifier": {
+          "description": "An identifier, such as a DOI or a Compact Identifier. If the dataset has more than one identifier, repeat the identifier property. If using JSON-LD, this is represented using JSON list syntax.",
+          "type": "string"
+        },
+        "creator": {
+          "description": "The creator or author of this dataset. To uniquely identify individuals, use ORCID ID as the value of the sameAs property of the Person type. To uniquely identify institutions and organizations, use ROR ID. ",
+          "$ref": "#/definitions/person"
+        },
+        "contributor": {
+          "description": "The other contributor(s) of this dataset, besides the creator",
+          "oneOf": [{
+              "$ref": "#/definitions/person"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/person"
+              }
+            }
+          ]
+        },
+        "spatialCoverage:": {
+          "@type": "object",
+          "properties": {
+            "latitude": {
+              "type": "string",
+              "description": "latitude coordinates"
+            },
+            "longitude": {
+              "type": "string",
+              "description": "longitude coordinates"
+            }
+          }
+        },
+        "citation": {
+          "description": "Identifies academic articles that are recommended by the data provider be cited in addition to the dataset itself. Provide the citation for the dataset itself with other properties, such as name, identifier, creator, and publisher properties. For example, this property can uniquely identify a related academic publication such as a data descriptor, data paper, or an article for which this dataset is supplementary material for. ",
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "identifier": {
+              "type": "string",
+              "description": "use PubMed id here"
+            }
+          },
+          "required": ["text"]
+        },
+        "includedInDataCatalog": {
+          "description": "This is a fixed  DataCatalog.",
+          "type": "object",
+          "properties": {
+            "name": {
+              "const": " Datasets"
+            },
+            "url": {
+              "const": "https://.ncats.nih.gov/cd2h/"
+            }
+          }
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ],
+      "definitions": {
+        "person": {
+          "description": "Reusable person definition",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": ["name"]
+        }
+      }
+    }
+  }]
+}
