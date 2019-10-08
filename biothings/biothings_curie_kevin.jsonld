@@ -1434,7 +1434,7 @@
             "rdfs:comment": "cohd ID",
             "rdfs:label": "cohd",
             "schema:domainIncludes": {
-                "@id": "bts:DiseaseOrPhenotypicFeature"
+                "@id": "bts:BiologicalEntity"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
