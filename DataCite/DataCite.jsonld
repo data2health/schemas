@@ -229,7 +229,7 @@
       "@id": "bts:creators",
       "@type": "rdfs:Property",
       "rdfs:comment": "a list of creators",
-      "rdfs:label": "contributors",
+      "rdfs:label": "creators",
       "schema:domainIncludes": {
         "@id": "bts:DataCite"
       },
