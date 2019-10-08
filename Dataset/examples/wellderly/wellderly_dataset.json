@@ -17,14 +17,14 @@
   ],
   "url": "https://www.scripps.edu/science-and-medicine/translational-institute/translational-research/genomic-medicine/wellderly/",
   "version": "1.0",
-  "datePublished": "2016-04-16T19:00:14",
-  "dateModified": "2018-06-27T21:52:26",
+  "datePublished": "2016-04-16",
+  "dateModified": "2018-06-27",
   "license": {
     "@type": "URL",
     "text": "Custom Data Access Agreement",
     "url": "https://redcapstsi.scripps.edu/redcap/surveys/?s=NT4N7A3KJD"
   },
-  "Sameas": "https://www.ebi.ac.uk/ega/datasets/EGAD00001003941",
+  "sameAs": "https://www.ebi.ac.uk/ega/datasets/EGAD00001003941",
   "measurementTechnique": "whole-genome sequencing",
   "publisher": {
     "@type": "Organization",
