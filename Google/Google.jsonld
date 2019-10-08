@@ -82,7 +82,7 @@
             }
           ]
         },
-        "spatialCoverage:": {
+        "spatialCoverage": {
           "@type": "object",
           "properties": {
             "latitude": {
