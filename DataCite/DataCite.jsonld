@@ -98,7 +98,7 @@
               "geoLocationPlace": {
                 "type": "string",
                 "description": "place of ocurrence"
-              },
+              }
             }
           },
           "fundingReference": {
@@ -152,7 +152,7 @@
           "creators": {
             "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
             "type": "object"
-          },
+          }
         },
         "required": [
           "titles",
@@ -161,7 +161,7 @@
           "identifiers",
           "publisher",
           "creator",
-          "publicationYear",
+          "publicationYear"
         ]
       }
     },
