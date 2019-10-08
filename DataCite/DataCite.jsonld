@@ -10,7 +10,9 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "some description about this class",
       "rdfs:label": "DataCite",
-      "rdfs:subClassOf": "schema:Dataset",
+      "rdfs:subClassOf": {
+        "@id": "schema:Dataset"
+      },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",

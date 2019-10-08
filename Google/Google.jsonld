@@ -9,7 +9,7 @@
     "@id": "bts:Google",
     "@type": "rdfs:Class",
     "rdfs:comment": "A body of structured information describing some topic(s) of interest.",
-    "rdfs:label": "Dataset",
+    "rdfs:label": "Google",
     "rdfs:subClassOf": {
       "@id": "schema:Dataset"
     },
