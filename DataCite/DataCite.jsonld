@@ -192,6 +192,18 @@
       }]
     },
     {
+      "@id": "bts:identifiers",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifiers",
+      "schema:domainIncludes": {
+        "@id": "bts:DataCite"
+      },
+      "schema:rangeIncludes": [{
+        "@id": "schema:Thing"
+      }]
+    },
+    {
       "@id": "bts:dates",
       "@type": "rdfs:Property",
       "rdfs:comment": "a list of dates",
