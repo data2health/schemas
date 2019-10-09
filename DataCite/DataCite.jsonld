@@ -134,7 +134,7 @@
                 "description": "title of the license"
               },
               "rightsURI": {
-                "type": "url",
+                "type": "string",
                 "description": "url of the license"
               }
             }
