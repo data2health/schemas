@@ -32,7 +32,7 @@
             "type": "object",
             "properties": {
               "date": {
-                "type": "date",
+                "type": "string",
                 "description": "date of publications"
               },
               "dateType": {
