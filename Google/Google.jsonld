@@ -84,6 +84,7 @@
         },
         "spatialCoverage": {
           "@type": "object",
+          "description": "You can provide a single point that describes the spatial aspect of the dataset. Only include this property if the dataset has a spatial dimension. For example, a single point where all the measurements were collected, or the coordinates of a bounding box for an area.",
           "properties": {
             "latitude": {
               "type": "string",

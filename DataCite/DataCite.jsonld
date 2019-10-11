@@ -32,8 +32,8 @@
             "type": "object",
             "properties": {
               "date": {
+                "description": "date of publications",
                 "type": "string",
-                "description": "date of publications"
               },
               "dateType": {
                 "type": "string",
@@ -141,11 +141,31 @@
           },
           "publisher": {
             "description": "The publisher of the creative work.",
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": ["name"]
           },
           "contributors": {
             "description": "A secondary contributor to the CreativeWork or Event.",
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "name of the person"
+              },
+              "affiliation": {
+                "type": "string",
+                "description": "affliliation"
+              }
+            }
           },
           "version": {
             "description": "The version of the CreativeWork embodied by a specified resource.",
@@ -153,7 +173,17 @@
           },
           "creators": {
             "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "name of the person"
+              },
+              "affiliation": {
+                "type": "string",
+                "description": "affliliation"
+              }
+            }
           }
         },
         "required": [
