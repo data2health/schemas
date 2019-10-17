@@ -153,27 +153,28 @@
           },
           "funding": {
             "description": "funding info of this dataset.",
-            "@type": "MonetaryGrant",
-            "type": "object",
-            "properties": {
-              "funder": {
-                "oneOf": [{
-                    "$ref": "#/definitions/funder"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/funder"
-                    }
-                  }
-                ]
+            "oneOf": [{
+                "@type": "MonetaryGrant",
+                "$ref": "#/definitions/funder",
+                "identifier": {
+                  "type": "string",
+                  "description": "unique grant number identifier"
+                },
+                "required": ["identifier"]
               },
-              "identifier": {
-                "type": "string",
-                "description": "use PubMed id here"
+              {
+                "type": "array",
+                "items": {
+                  "@type": "MonetaryGrant",
+                  "$ref": "#/definitions/funder",
+                  "identifier": {
+                    "type": "string",
+                    "description": "unique grant number identifier"
+                  },
+                  "required": ["identifier"]
+                }
               }
-            },
-            "required": ["identifier"]
+            ]
           },
           "includedInDataCatalog": {
             "description": "This is a fixed CTSA DataCatalog.",
