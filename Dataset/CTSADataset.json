@@ -258,7 +258,7 @@
         "@id": "bts:CTSADataset"
       },
       "schema:rangeIncludes": {
-        "@id": "bts:BioMedicalGrant"
+        "@id": "schema:MonetaryGrant"
       }
     },
     {
