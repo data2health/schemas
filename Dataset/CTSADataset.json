@@ -153,7 +153,7 @@
           },
           "funding": {
             "description": "funding info of this dataset.",
-            "@type": "Organization",
+            "@type": "MonetaryGrant",
             "type": "object",
             "properties": {
               "funder": {
@@ -199,6 +199,7 @@
         "definitions": {
           "person": {
             "description": "Reusable person definition",
+            "@type": "Person",
             "type": "object",
             "properties": {
               "name": {
@@ -213,6 +214,7 @@
           },
           "funder": {
             "type": "object",
+            "@type": "Organization",
             "description": "Information about a single funder",
             "properties": {
               "name": {
