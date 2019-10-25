@@ -246,7 +246,7 @@
       "rdfs:comment": "Sample information including size, organism, tissus, etc.",
       "rdfs:label": "samples",
       "schema:domainIncludes": {
-        "@id": "bts:CTSADataset"
+        "@id": "bts:BioMedicalDataset"
       },
       "schema:rangeIncludes": {
         "@id": "bts:DataSamples"
