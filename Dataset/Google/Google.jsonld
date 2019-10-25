@@ -10,7 +10,7 @@
     "@type": "rdfs:Class",
     "rdfs:comment": "A body of structured information describing some topic(s) of interest.",
     "rdfs:label": "Google",
-    "rdfs:subClassOf": {
+    "http://schema.org/sameAs": {
       "@id": "schema:Dataset"
     },
     "$validation": {
