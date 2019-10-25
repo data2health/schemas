@@ -258,7 +258,7 @@
       "rdfs:comment": "Funder information",
       "rdfs:label": "funding",
       "schema:domainIncludes": {
-        "@id": "bts:CTSADataset"
+        "@id": "bts:BioMedicalDataset"
       },
       "schema:rangeIncludes": {
         "@id": "schema:MonetaryGrant"
