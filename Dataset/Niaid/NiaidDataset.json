@@ -65,11 +65,11 @@
           },
           "species": {
             "description": "Species(es) from which dataset has been collected",
-            "type": "string",
+            "type": "string"
           },
           "pathogen": {
             "description": "Pathogen(s) which are the focus of the dataset",
-            "type": "string",
+            "type": "string"
           },
         },
         "required": [
@@ -154,7 +154,7 @@
             "type": "object",
             "properties": {
               "name": {
-                "type": "string",
+                "type": "string"
               },
               "url": {
                 "type": "string",
