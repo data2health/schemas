@@ -70,7 +70,7 @@
           "pathogen": {
             "description": "Pathogen(s) which are the focus of the dataset",
             "type": "string"
-          },
+          }
         },
         "required": [
           "name",
@@ -164,7 +164,7 @@
             "required": [
               "url"
             ]
-          },
+          }
         }
       }
     },
