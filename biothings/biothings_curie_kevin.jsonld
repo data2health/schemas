@@ -1914,6 +1914,21 @@
             }
         },
         {
+            "@id": "bts:partOf",
+            "@type": "rdf:Property",
+            "rdfs:comment": "relationship between gene and gene family",
+            "rdfs:label": "partOf",
+            "schema:domainIncludes": {
+                "@id": "bts:Gene"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:GeneFamily"
+            }
+        },
+        {
             "@id": "bts:enabledBy",
             "@type": "rdf:Property",
             "rdfs:comment": "GO molecular function enabled by the gene/protein.",
