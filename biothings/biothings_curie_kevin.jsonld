@@ -1744,9 +1744,14 @@
             "@type": "rdf:Property",
             "rdfs:comment": "ChEMBL compound ID for chemical",
             "rdfs:label": "chembl",
-            "schema:domainIncludes": {
-                "@id": "bts:ChemicalSubstance"
-            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "bts:ChemicalSubstance"
+                },
+                {
+                    "@id": "bts:Gene"
+                }
+            ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
