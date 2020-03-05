@@ -1239,6 +1239,24 @@
             }
         },
         {
+            "@id": "bts:pathwayFigureID",
+            "@type": "rdf:Property",
+            "rdfs:comment": "pathway figure ID",
+            "rdfs:label": "pathwayFigureID",
+            "schema:domainIncludes": {
+                "@id": "bts:Pathway"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
             "@id": "bts:go",
             "@type": "rdf:Property",
             "rdfs:comment": "gene ontology ID",
