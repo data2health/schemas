@@ -1794,6 +1794,42 @@
             }
         },
         {
+            "@id": "bts:samd",
+            "@type": "rdf:Property",
+            "rdfs:comment": "SAMD ID for biosample",
+            "rdfs:label": "samd",
+            "schema:domainIncludes": {
+                "@id": "bts:Biosample"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:clo",
+            "@type": "rdf:Property",
+            "rdfs:comment": "CLO ID for biosample",
+            "rdfs:label": "clo",
+            "schema:domainIncludes": {
+                "@id": "bts:CellLine"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
             "@id": "bts:molecularFormula",
             "@type": "rdf:Property",
             "rdfs:comment": "Chemical molecular formula",
