@@ -2389,6 +2389,78 @@
             }
         },
         {
+            "@id": "bts:diseaseAssociatedWithBiosample",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between a disease and a biosample",
+            "rdfs:label": "diseaseAssociatedWithBiosample",
+            "schema:domainIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:Biosample"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:biosampleAssociatedWithDisease"
+            }
+        },
+        {
+            "@id": "bts:biosampleAssociatedWithDisease",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between a disease and a biosample",
+            "rdfs:label": "biosampleAssociatedWithDisease",
+            "schema:domainIncludes": {
+                "@id": "bts:Biosample"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:DiseaseOrPhenotypicFeature"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:diseaseAssociatedWithBiosample"
+            }
+        },
+        {
+            "@id": "bts:clAssociatedWithBiosample",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between a cell line and a biosample",
+            "rdfs:label": "clAssociatedWithBiosample",
+            "schema:domainIncludes": {
+                "@id": "bts:CellLine"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:Biosample"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:biosampleAssociatedWithCl"
+            }
+        },
+        {
+            "@id": "bts:biosampleAssociatedWithCl",
+            "@type": "rdf:Property",
+            "rdfs:comment": "holds between a cell line and a biosample",
+            "rdfs:label": "clAssociatedWithDisease",
+            "schema:domainIncludes": {
+                "@id": "bts:Biosample"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "bts:CellLine"
+            },
+            "schema:inverseOf": {
+                "@id": "bts:clAssociatedWithBiosample"
+            }
+        },
+        {
             "@id": "bts:geneAssociatedWithVariant",
             "@type": "rdf:Property",
             "rdfs:comment": "holds between a gene and a variant.",
