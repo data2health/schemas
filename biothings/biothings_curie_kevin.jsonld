@@ -2446,7 +2446,7 @@
             "@id": "bts:biosampleAssociatedWithCl",
             "@type": "rdf:Property",
             "rdfs:comment": "holds between a cell line and a biosample",
-            "rdfs:label": "clAssociatedWithDisease",
+            "rdfs:label": "biosampleAssociatedWithCl",
             "schema:domainIncludes": {
                 "@id": "bts:Biosample"
             },
