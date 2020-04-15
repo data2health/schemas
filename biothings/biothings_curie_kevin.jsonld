@@ -1266,9 +1266,14 @@
             "@type": "rdf:Property",
             "rdfs:comment": "gene ontology ID",
             "rdfs:label": "go",
-            "schema:domainIncludes": {
+            "schema:domainIncludes": [
+                {
                 "@id": "bts:BiologicalProcessOrActivity"
-            },
+                },
+                {
+                "@id": "bts:CellularComponent"
+                }
+            ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
@@ -1900,6 +1905,42 @@
             "rdfs:label": "pr",
             "schema:domainIncludes": {
                 "@id": "bts:Protein"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:so",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Sequence Ontology ID",
+            "rdfs:label": "so",
+            "schema:domainIncludes": {
+                "@id": "bts:GenomicEntity"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
+            "@id": "bts:mop",
+            "@type": "rdf:Property",
+            "rdfs:comment": "MOP ID",
+            "rdfs:label": "mop",
+            "schema:domainIncludes": {
+                "@id": "bts:MolecularActivity"
             },
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
