@@ -1097,9 +1097,14 @@
             "@type": "rdf:Property",
             "rdfs:comment": "CL ID for anatomy",
             "rdfs:label": "cl",
-            "schema:domainIncludes": {
+            "schema:domainIncludes": [
+                {
                 "@id": "bts:AnatomicalEntity"
-            },
+                },
+                {
+                "@id": "bts:Cell"
+                }
+            ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
