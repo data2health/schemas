@@ -1817,6 +1817,24 @@
             }
         },
         {
+            "@id": "bts:chebi",
+            "@type": "rdf:Property",
+            "rdfs:comment": "CHEBI ID for chemical",
+            "rdfs:label": "chebi",
+            "schema:domainIncludes": {
+                "@id": "bts:ChemicalSubstance"
+            },
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": {
+                "@id": "schema:Text"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "http://schema.org/identifier"
+            }
+        },
+        {
             "@id": "bts:unii",
             "@type": "rdf:Property",
             "rdfs:comment": "UNII ID for chemical",
