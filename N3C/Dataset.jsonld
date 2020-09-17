@@ -3,14 +3,14 @@
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "N3C": "http://discovery.biothings.io/"
+    "nccc": "http://discovery.biothings.io/"
   },
   "@graph": [
     {
-      "@id": "N3C:Dataset",
+      "@id": "nccc:NcccDataset",
       "@type": "rdfs:Class",
-      "rdfs:comment": "This is the draft dataset schema for N3C",
-      "rdfs:label": "Dataset",
+      "rdfs:comment": "Draft schema for N3C dataset",
+      "rdfs:label": "NcccDataset",
       "rdfs:subClassOf": {
         "@id": "outbreak:Dataset"
       },
@@ -19,11 +19,11 @@
         "type": "object",
         "properties": {
           "name": {
-            "description": "name of the dataset",
+            "description": "name of the source from which this dataset was identified for inclusion",
             "type": "string"
           },
           "identifier": {
-            "description": "identifier for of the dataset",
+            "description": "identifier (if available) of related resource",
             "type": "string"
           },
           "description": {
@@ -112,17 +112,56 @@
             "type": "object",
             "properties": {
               "name": {
-                "const": "N3C Datasets"
+                "const": "CTSA Datasets"
               },
               "url": {
-                "const": "https://ncats.nih.gov/n3c/"
+                "const": "https://ctsa.ncats.nih.gov/cd2h/"
               }
             }
           }
         },
         "required": [
           "name",
-          "identifier"
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name"
         ]
       }
     }
