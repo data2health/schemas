@@ -4,7 +4,8 @@
     "owl": "http://www.w3.org/2002/07/owl/",
     "rdf": "http://www.w3.org/1999/02/22/-rdf-syntax-ns/",
     "rdfs": "http://www.w3.org/2000/01/rdf/-schema/",
-    "schema": "http://schema.org/"
+    "schema": "http://schema.org/",
+    "nccc": "http://discovery.biothings.io/"
   },
   "@id": "https://discovery.biothings.io/view/nccc/",
   "@graph": [
@@ -70,7 +71,7 @@
         "@id": "outbreak:Dataset"
       },
       "schema:isPartOf": {
-        "@id": "https://discovery.biothings.io/view/nccc//"
+        "@id": "https://discovery.biothings.io/view/nccc/"
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
@@ -339,6 +340,19 @@
             "description": "The date this resource was added into N3C, or was updated in N3C.",
             "type": "string",
             "format": "date"
+          },
+          "includedInDataCatalog": {
+            "description": "Data catalog(s) which contain this dataset.",
+            "oneOf": [{
+                "$ref": "#/definitions/inclusionObject"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/inclusionObject"
+                }
+              }
+            ]
           }
         },
         "required": [
@@ -583,20 +597,26 @@
                 "type": "string",
                 "format": "uri"
               },
-              "versionDate": {
-                "description": "The version date of the resource used at the time of the creation of the citation as certain resources (protocols, datasets) may change frequently over time.",
-                "type": "string",
-                "format": "date"
-              },
               "citeText": {
                 "description": "The bibliographic citation for the referenced resource as is provided",
                 "type": "string"
               }
             },
             "required": [
-              "name",
-              "type"
+              "name"
             ]
+          },
+          "inclusionObject":{
+            "description": "A data catalog which contains this dataset.",
+            "type": "object",
+            "properties": {
+              "name": {
+                "const": "N3C Datasets"
+              },
+              "url": {
+                "const": "https://ncats.nih.gov/n3c/"
+              }
+            }
           }
         }
       }
@@ -612,6 +632,7 @@
     {"@id":"nccc:citedBy","@type":"rdf:Property","rdfs:comment":"Associated resource that utilized or was derived from this dataset.","rdfs:label":"citedBy","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"owl:inverseOf: schema:isBasedOn"},"schema:domainIncludes":{"@id":"nccc:Dataset"},"schema:rangeIncludes":{"@id":"schema:Thing"}},{"@id":"nccc:name","@type":"rdf:Property","rdfs:comment":"name of the resource utilize or was derived from this dataset","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"schema:Thing"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"nccc:identifier","@type":"rdf:Property","rdfs:comment":"identifier for this resource which utilized or was derived from this dataset","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"schema:Thing"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"nccc:isBasedOn","@type":"rdf:Property","rdfs:comment":"Associated resource from which this dataset was derived","rdfs:label":"isBasedOn","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:isBasedOn"},"schema:domainIncludes":{"@id":"nccc:Dataset"},"schema:rangeIncludes":{"@id":"schema:Thing"}},{"@id":"nccc:name","@type":"rdf:Property","rdfs:comment":"name of the associated resource from which this dataset was derived","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"schema:Thing"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"nccc:identifier","@type":"rdf:Property","rdfs:comment":"Identifier for the resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"schema:Thing"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"nccc:relatedTo","@type":"rdf:Property","rdfs:comment":"Other resources related to, but not a derivative of nor derived from this dataset","rdfs:label":"relatedTo","owl:cardinality":"many","marginality":"optional","rdfs:sameAs":{"@id":"schema:relatedTo"},"schema:domainIncludes":{"@id":"nccc:Dataset"},"schema:rangeIncludes":{"@id":"schema:Thing"}},{"@id":"nccc:name","@type":"rdf:Property","rdfs:comment":"name of related resource","rdfs:label":"name","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":{"@id":"schema:Thing"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"nccc:identifier","@type":"rdf:Property","rdfs:comment":"identifier (if available) of related resource","rdfs:label":"identifier","owl:cardinality":"one","marginality":"optional","rdfs:sameAs":{"@id":"schema:identifier"},"schema:domainIncludes":{"@id":"schema:Thing"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"nccc:topicCategory","@type":"rdf:Property","rdfs:comment":"Applicable category","rdfs:label":"topicCategory","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:about"},"schema:domainIncludes":{"@id":"nccc:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},{"@id":"nccc:keywords","@type":"rdf:Property","rdfs:comment":"keywords","rdfs:label":"keywords","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:keywords"},"schema:domainIncludes":{"@id":"nccc:Dataset"},"schema:rangeIncludes":{"@id":"schema:Text"}},
     {"@id":"nccc:curatedBy","@type":"rdf:Property","rdfs:comment":"The source from which this dataset was identified for inclusion. Provides provenance for a resource which was curated by another","rdfs:label":"curatedBy","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:citation"},"schema:domainIncludes":{"@id":"nccc:Dataset"},"schema:rangeIncludes":[{"@id":"nccc:Dataset"},{"@id":"nccc:Person"},{"@id":"nccc:Organization"},{"@id":"schema:Thing"}]},
     {"@id":"nccc:name","@type":"rdf:Property","rdfs:comment":"name of the source from which this dataset was identified for inclusion","rdfs:label":"name","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:name"},"schema:domainIncludes":[{"@id":"nccc:Dataset"},{"@id":"nccc:Person"},{"@id":"nccc:Organization"},{"@id":"schema:Thing"}],"schema:rangeIncludes":{"@id":"schema:Text"}},
-    {"@id":"nccc:curationDate","@type":"rdf:Property","rdfs:comment":"The date this resource was added or updated in N3C","rdfs:label":"curationDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":{"@id":"nccc:Dataset"},"schema:rangeIncludes":{"@id":"schema:Date"}}
+    {"@id":"nccc:curationDate","@type":"rdf:Property","rdfs:comment":"The date this resource was added or updated in N3C","rdfs:label":"curationDate","owl:cardinality":"one","marginality":"recommended","rdfs:sameAs":{"@id":"schema:releaseDate"},"schema:domainIncludes":{"@id":"nccc:Dataset"},"schema:rangeIncludes":{"@id":"schema:Date"}},
+    {"@id":"nccc:includedInDataCatalog","@type":"rdf:Property","rdfs:comment":"The source from which this dataset was identified for inclusion. Provides provenance for a resource which was curated by another","rdfs:label":"includedInDataCatalog","owl:cardinality":"many","marginality":"recommended","rdfs:sameAs":{"@id":"schema:includedInDataCatalog"},"schema:domainIncludes":{"@id":"nccc:Dataset"},"schema:rangeIncludes":[{"@id":"schema:DataCatalog"},{"@id":"nccc:Dataset"},{"@id":"schema:Thing"}]}
   ]
 }
