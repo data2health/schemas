@@ -1,599 +1,14 @@
 {
   "@context": {
     "owl": "http://www.w3.org/2002/07/owl/",
-    "rdf": "http://www.w3.org/1999/02/22/-rdf-syntax-ns/",
-    "rdfs": "http://www.w3.org/2000/01/rdf/-schema/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "schema": "http://schema.org/",
     "n3c": "http://discovery.biothings.io/"
   },
   "@id": "https://discovery.biothings.io/view/n3c/",
   "@graph": [
-    {
-      "@id": "n3c:Organization",
-      "@type": "rdfs:Class",
-      "rdfs:label": "Organization",
-      "rdfs:comment": "This is the schema for describing the Organization schema used for N3C.",
-      "rdfs:subClassOf": {
-        "@id": "schema:Organization"
-      },
-      "schema:isPartOf": {
-        "@id": "https://discovery.biothings.io/view/n3c/"
-      }
-    },
-    {
-      "@id": "n3c:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the organization, team or group",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Organization"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:alternateName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Alternative names or commonly used abbreviations for the organization, team or group",
-      "rdfs:label": "alternateName",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:alternateName"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Organization"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:affiliation",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An overarching consortia, multi-institutional team or group in which the organization\/team\/group is a member or affiliate",
-      "rdfs:label": "affiliation",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:affiliation"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Organization"
-      },
-      "schema:rangeIncludes": {
-        "@id": "n3c:Organization"
-      }
-    },
-    {
-      "@id": "n3c:affiliationStatus",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The status of the organization's membership or affiliation in the overarching consortial, multi-institutional team or group (current, past)",
-      "rdfs:label": "affiliationStatus",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:category"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Organization"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:members",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Members of this organization, team, or group",
-      "rdfs:label": "members",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:members"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Organization"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "n3c:Person"
-        },
-        {
-          "@id": "n3c:Organization"
-        }
-      ]
-    },
-    {
-      "@id": "n3c:membershipStatus",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Status of the members of this organization",
-      "rdfs:label": "membershipStatus",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:category"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Organization"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:relatedTo",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A resource which a person played a role",
-      "rdfs:label": "relatedTo",
-      "owl:cardinality": "many",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:relatedTo"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Organization"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:HowTo"
-        }
-      ]
-    },
-    {
-      "@id": "n3c:class",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A classification of the organization by a resource. Eg- for ClinicalTrials funders, it's [\"U.S. National Institutes of Health\", \"Other U.S. Federal agencies\", \"Industry\", \"All others\"]",
-      "rdfs:label": "class",
-      "owl:cardinality": "many",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:addtionalType"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:HowTo"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:role",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The role of an organization in its involvement with a resource",
-      "rdfs:label": "role",
-      "owl:cardinality": "many",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:category"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:HowTo"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:Person",
-      "@type": "rdfs:Class",
-      "rdfs:label": "Person",
-      "rdfs:comment": "This is the schema for describing the Person schema used for N3C.",
-      "rdfs:subClassOf": {
-        "@id": "schema:Person"
-      },
-      "schema:isPartOf": {
-        "@id": "https://discovery.biothings.io/view/n3c/"
-      }
-    },
-    {
-      "@id": "n3c:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the person",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Person"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:alternateName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Alternative ways in which the person's name is included in a record",
-      "rdfs:label": "alternateName",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:alternateName"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Person"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:givenName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The given name of the person",
-      "rdfs:label": "givenName",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:givenName"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Person"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:familyName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The family name of the person",
-      "rdfs:label": "familyName",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:familyName"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Person"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:affiliation",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The organization with which the person is affiliated or has membership in",
-      "rdfs:label": "affiliation",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:affiliation"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Person"
-      },
-      "schema:rangeIncludes": {
-        "@id": "n3c:Organization"
-      }
-    },
-    {
-      "@id": "n3c:affiliationStatus",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The status of the person's membership or affiliation in an organization, team or group (current, past)",
-      "rdfs:label": "affiliationStatus",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:addtionalType"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Person"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:orcid",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The ORCID ID of the person",
-      "rdfs:label": "orcid",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:identifier"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Person"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:relatedTo",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A resource which a person played a role",
-      "rdfs:label": "relatedTo",
-      "owl:cardinality": "many",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:relatedTo"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Person"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:HowTo"
-        }
-      ]
-    },
-    {
-      "@id": "n3c:role",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The role a person played in the creation of a resource",
-      "rdfs:label": "role",
-      "owl:cardinality": "one",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:addtionalType"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:HowTo"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:DataDownload",
-      "@type": "rdfs:Class",
-      "rdfs:label": "DataDownload",
-      "rdfs:comment": "This is the schema for describing the DataDownload schema used for N3C.",
-      "rdfs:subClassOf": {
-        "@id": "schema:DataDownload"
-      },
-      "schema:isPartOf": {
-        "@id": "https://discovery.biothings.io/view/n3c/"
-      }
-    },
-    {
-      "@id": "n3c:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the download if available",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:DataDownload"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:contentUrl",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Link to the location where the dataset can be found, ideally a permanent URL",
-      "rdfs:label": "contentUrl",
-      "owl:cardinality": "one",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:distribution"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:DataDownload"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
-    },
-    {
-      "@id": "n3c:dateModified",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Date which the particular DataDownload (file) has been changed",
-      "rdfs:label": "dateModified",
-      "owl:cardinality": "one",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:dateModified"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:DataDownload"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Date"
-      }
-    },
-    {
-      "@id": "n3c:MonetaryGrant",
-      "@type": "rdfs:Class",
-      "rdfs:label": "MonetaryGrant",
-      "rdfs:comment": "This is the schema for describing the MonetaryGrant schema used for N3C.",
-      "rdfs:subClassOf": {
-        "@id": "schema:MonetaryGrant"
-      },
-      "schema:isPartOf": {
-        "@id": "https://discovery.biothings.io/view/n3c/"
-      }
-    },
-    {
-      "@id": "n3c:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the monetary grant",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:MonetaryGrant"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:identifier",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The grant ID or an identifier associated with the grant",
-      "rdfs:label": "identifier",
-      "owl:cardinality": "one",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:identifier"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:MonetaryGrant"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:url",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The url for the grant (if available)",
-      "rdfs:label": "url",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:url"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:MonetaryGrant"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
-    },
-    {
-      "@id": "n3c:funder",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The funding organization of the grant",
-      "rdfs:label": "funder",
-      "owl:cardinality": "many",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:funder"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:MonetaryGrant"
-      },
-      "schema:rangeIncludes": {
-        "@id": "n3c:Organization"
-      }
-    },
-    {
-      "@id": "n3c:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the funding organization",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Organization"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:recipient",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The person or organization to whom or to which the grant was awarded",
-      "rdfs:label": "recipient",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:recipient"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:MonetaryGrant"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "n3c:Person"
-        },
-        {
-          "@id": "n3c:Organization"
-        }
-      ]
-    },
-    {
-      "@id": "n3c:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the recipient of the grant",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "n3c:Person"
-        },
-        {
-          "@id": "n3c:Organization"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:affiliation",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The affiliation of the recipient of the grant",
-      "rdfs:label": "affiliation",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:affiliation"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "n3c:Person"
-        },
-        {
-          "@id": "n3c:Organization"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
     {
       "@id": "n3c:Dataset",
       "@type": "rdfs:Class",
@@ -615,42 +30,6 @@
           },
           "description": {
             "description": "Longer description of what is contained in the dataset",
-            "type": "string"
-          },
-          "measurementTechnique": {
-            "description": "A technique or technology used in a Dataset, corresponding to the method used for measuring the corresponding variable(s).",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/controlledVocabulary"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/controlledVocabulary"
-                }
-              }
-            ]
-          },
-          "variableMeasured": {
-            "description": "A technique or technology used in a Dataset, corresponding to the method used for measuring the corresponding variable(s).",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/moreControlledVocabulary"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/moreControlledVocabulary"
-                }
-              }
-            ]
-          },
-          "identifier": {
-            "description": "identifier for the dataset",
-            "type": "string"
-          },
-          "doi": {
-            "description": "The DOI for the dataset if available",
             "type": "string"
           },
           "author": {
@@ -676,19 +55,47 @@
               }
             ]
           },
-          "distribution": {
-            "description": "Available downloads of the dataset.",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/datadownload"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/datadownload"
-                }
-              }
-            ]
+          "license": {
+            "description": "A license document that applies to this content, typically indicated by a URL.",
+            "type": "string"
+          },
+          "cost": {
+            "description": "Specify the cost to obtain the dataset, \"Free\", \"Subscription\" or others",
+            "type": "string"
+          },
+          "url": {
+            "description": "The main URL about the dataset",
+            "type": "string",
+            "format": "uri"
+          },
+          "identifier": {
+            "description": "identifier for the dataset in a shared repository (GEO, Zenodo, figshare, etc)",
+            "type": "string"
+          },
+          "contain_geo_codes": {
+            "description": "Does the dataset contains GEO codes (e.g. zip codes)?",
+            "type": "boolean"
+          },
+          "contain_phi": {
+            "description": "Does the dataset contains Protected health information (PHI)?",
+            "type": "boolean"
+          },
+          "justification": {
+            "description": "How is the dataset relevant to the N3C project, why does the community want and how can it be used?",
+            "type": "string"
+          },
+          "doi": {
+            "description": "The DOI for the dataset if available",
+            "type": "string"
+          },
+          "contact": {
+            "description": "Provide an email contact",
+            "type": "string"
+          },
+          "documentation": {
+            "description": "Provide the URL to the detailed documentation about the dataset",
+            "type": "string",
+            "format": "uri"
           },
           "funding": {
             "description": "Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution",
@@ -700,93 +107,6 @@
                 "type": "array",
                 "items": {
                   "$ref": "#/definitions/funding"
-                }
-              }
-            ]
-          },
-          "license": {
-            "description": "A license document that applies to this content, typically indicated by URL.",
-            "type": "string",
-            "format": "uri"
-          },
-          "topicCategory": {
-            "description": "Applicable N3C category",
-            "oneOf": [
-              {
-                "enum": [
-                  "Clinical",
-                  "Case Descriptions",
-                  "Risk Factors",
-                  "Diagnosis",
-                  "Symptoms",
-                  "Rapid Diagnostics",
-                  "Antibody Detection",
-                  "Virus Detection",
-                  "Testing Prevalence",
-                  "Pathology/Radiology",
-                  "Forecasting",
-                  "Mechanism",
-                  "Virus Factors",
-                  "Host Factors",
-                  "Immunological Response",
-                  "Mechanism of Infection",
-                  "Mechanism of Transmission",
-                  "Prevention",
-                  "Public Health Interventions",
-                  "Individual Prevention",
-                  "Transmission",
-                  "Host/Intermediate Reservoirs",
-                  "Viral Shedding / Persistence",
-                  "Treatment",
-                  "Vaccines",
-                  "Pharmaceutical Treatments",
-                  "Medical Care",
-                  "Repurposing",
-                  "Biologics",
-                  "Behavioral Research",
-                  "Epidemiology",
-                  "Classical Epidemiology",
-                  "Molecular Epidemiology"
-                ]
-              },
-              {
-                "type": "array",
-                "items": {
-                  "enum": [
-                    "Clinical",
-                    "Case Descriptions",
-                    "Risk Factors",
-                    "Diagnosis",
-                    "Symptoms",
-                    "Rapid Diagnostics",
-                    "Antibody Detection",
-                    "Virus Detection",
-                    "Testing Prevalence",
-                    "Pathology/Radiology",
-                    "Forecasting",
-                    "Mechanism",
-                    "Virus Factors",
-                    "Host Factors",
-                    "Immunological Response",
-                    "Mechanism of Infection",
-                    "Mechanism of Transmission",
-                    "Prevention",
-                    "Public Health Interventions",
-                    "Individual Prevention",
-                    "Transmission",
-                    "Host/Intermediate Reservoirs",
-                    "Viral Shedding / Persistence",
-                    "Treatment",
-                    "Vaccines",
-                    "Pharmaceutical Treatments",
-                    "Medical Care",
-                    "Repurposing",
-                    "Biologics",
-                    "Behavioral Research",
-                    "Epidemiology",
-                    "Classical Epidemiology",
-                    "Molecular Epidemiology"
-                  ]
                 }
               }
             ]
@@ -805,8 +125,36 @@
               }
             ]
           },
-          "isBasedOn": {
-            "description": "A citation to a resource (eg- publication, protocol, etc.) on which this dataset was derived (stored as an object, not a string)",
+          "measurementTechnique": {
+            "description": "A technique or technology used in a Dataset, corresponding to the method used for measuring the corresponding variable(s).",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/controlledVocabulary"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/controlledVocabulary"
+                }
+              }
+            ]
+          },
+          "standards_used": {
+            "description": "A list of standards used in the dataset, e.g. OMOP.",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "citation": {
+            "description": "A citation to the dataset",
             "oneOf": [
               {
                 "$ref": "#/definitions/citation"
@@ -819,70 +167,13 @@
               }
             ]
           },
-          "citedBy": {
-            "description": "A citation to a resource (eg- publication, protocol, etc.) which is derived from this dataset (stored as an object, not a string)",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/citation"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/citation"
-                }
-              }
-            ]
+          "release_frequency": {
+            "description": "How frequent is the new version of the dataset released (monthly, quarterly, etc)",
+            "type": "string"
           },
-          "relatedTo": {
-            "description": "A citation to a resource (eg- publication, protocol, etc.) which is related to the dataset but is not a derivative nor was derived from the dataset (stored as an object, not a string)",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/citation"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/citation"
-                }
-              }
-            ]
-          },
-          "curatedBy": {
-            "description": "The source from which this Dataset was identified for inclusion into N3C. Provides provenance for a resource which was curated by another.",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/citation"
-              },
-              {
-                "$ref": "#/definitions/person"
-              },
-              {
-                "$ref": "#/definitions/organization"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/person"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/organization"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/citation"
-                }
-              }
-            ]
-          },
-          "curationDate": {
-            "description": "The date this resource was added into N3C, or was updated in N3C.",
-            "type": "string",
-            "format": "date"
+          "comment": {
+            "description": "Any other comments about this dataset?",
+            "type": "string"
           },
           "includedInDataCatalog": {
             "description": "Data catalog(s) which contain this dataset.",
@@ -902,7 +193,14 @@
         "required": [
           "name",
           "description",
-          "author"
+          "author",
+          "license",
+          "cost",
+          "url",
+          "identifier",
+          "contain_geo_codes",
+          "contain_phi",
+          "justification"
         ],
         "definitions": {
           "controlledVocabulary": {
@@ -942,28 +240,6 @@
                 "https://bioportal.bioontology.org/ontologies/COVID19"
               ]
             }
-          },
-          "datadownload": {
-            "description": "A dataset in downloadable form.",
-            "@type": "DataDownload",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "dateModified": {
-                "type": "string",
-                "format": "date"
-              },
-              "contentUrl": {
-                "type": "string",
-                "format": "uri"
-              }
-            },
-            "required": [
-              "dateModified",
-              "contentUrl"
-            ]
           },
           "baseOrgObject": {
             "description": "A barebones Organization object to work around recursion issues in DDE",
@@ -1173,273 +449,27 @@
       }
     },
     {
-      "@id": "n3c:name",
+      "@id": "n3c:contain_geo_codes",
       "@type": "rdf:Property",
-      "rdfs:comment": "Short, descriptive title for the dataset",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
+      "rdfs:comment": "Does the dataset contains GEO codes (e.g. zip codes)?",
+      "rdfs:label": "contain_geo_codes",
       "schema:domainIncludes": {
         "@id": "n3c:Dataset"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Boolean"
       }
     },
     {
-      "@id": "n3c:description",
+      "@id": "n3c:contain_phi",
       "@type": "rdf:Property",
-      "rdfs:comment": "Longer description of what was contained in the dataset. For example, dataset fields, ...",
-      "rdfs:label": "description",
-      "owl:cardinality": "one",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:description"
-      },
+      "rdfs:comment": "Does the dataset contains Protected health information (PHI)?",
+      "rdfs:label": "contain_phi",
       "schema:domainIncludes": {
         "@id": "n3c:Dataset"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:measurementTechnique",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Measurement technique(s) used in collecting the dataset, e.g. RNA sequencing",
-      "rdfs:label": "measurementTechnique",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:measurementTechnique"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:variableMeasured",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The factors or variables measured in the dataset",
-      "rdfs:label": "variableMeasured",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:variableMeasured"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:author",
-      "@type": "rdf:Property",
-      "rdfs:comment": "person, people, or organization that created the dataset",
-      "rdfs:label": "author",
-      "owl:cardinality": "many",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:author"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "n3c:Person"
-        },
-        {
-          "@id": "n3c:Organization"
-        }
-      ]
-    },
-    {
-      "@id": "n3c:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the author as provided by the resource",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "n3c:Person"
-        },
-        {
-          "@id": "n3c:Organization"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:affiliation",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The author's affiliation(s)",
-      "rdfs:label": "affiliation",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:affiliation"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "n3c:Person"
-        },
-        {
-          "@id": "n3c:Organization"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:distribution",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Available downloads of the dataset",
-      "rdfs:label": "distribution",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:DataDownload"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": {
-        "@id": "n3c:DataDownload"
-      }
-    },
-    {
-      "@id": "n3c:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the download if available",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:DataDownload"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:contentUrl",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Link to the location where the dataset can be found, ideally a permanent URL",
-      "rdfs:label": "contentUrl",
-      "owl:cardinality": "one",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:contentUrl"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:DataDownload"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
-    },
-    {
-      "@id": "n3c:dateModified",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Date which the particular DataDownload (file) has been changed",
-      "rdfs:label": "dateModified",
-      "owl:cardinality": "one",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:dateModified"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:DataDownload"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Date"
-      }
-    },
-    {
-      "@id": "n3c:funding",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Funding for the generation of the dataset",
-      "rdfs:label": "funding",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "n3c:MonetaryGrant"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": {
-        "@id": "n3c:MonetaryGrant"
-      }
-    },
-    {
-      "@id": "n3c:funder",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Name of the funding organization ofr the dataset. Note: schema.org\/funder and schema.org\/Grant have additional fields that can provide more information about the funding organization, if desired",
-      "rdfs:label": "funder",
-      "owl:cardinality": "many",
-      "marginality": "required",
-      "rdfs:sameAs": {
-        "@id": "schema:funder"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:MonetaryGrant"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:identifier",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The identifier of the grant (if available)",
-      "rdfs:label": "identifier",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:identifier"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:MonetaryGrant"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:identifier",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Unique identifier for the dataset",
-      "rdfs:label": "identifier",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:identifier"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -1447,11 +477,6 @@
       "@type": "rdf:Property",
       "rdfs:comment": "DOI for the dataset if available",
       "rdfs:label": "doi",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:identifier"
-      },
       "schema:domainIncludes": {
         "@id": "n3c:Dataset"
       },
@@ -1460,15 +485,70 @@
       }
     },
     {
-      "@id": "n3c:license",
+      "@id": "n3c:cost",
       "@type": "rdf:Property",
-      "rdfs:comment": "License associated with re-use of the dataset",
-      "rdfs:label": "license",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:license"
+      "rdfs:comment": "Specify the cost to obtain the dataset, \"Free\", \"Subscription\" or others",
+      "rdfs:label": "cost",
+      "schema:domainIncludes": {
+        "@id": "n3c:Dataset"
       },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "n3c:justification",
+      "@type": "rdf:Property",
+      "rdfs:comment": "How is the dataset relevant to the N3C project, why does the community want and how can it be used?",
+      "rdfs:label": "justification",
+      "schema:domainIncludes": {
+        "@id": "n3c:Dataset"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "n3c:contact",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Provide an email contact",
+      "rdfs:label": "contact",
+      "schema:domainIncludes": {
+        "@id": "n3c:Dataset"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "n3c:standards_used",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A list of standards used in the dataset, e.g. OMOP.",
+      "rdfs:label": "standards_used",
+      "schema:domainIncludes": {
+        "@id": "n3c:Dataset"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "n3c:release_frequency",
+      "@type": "rdf:Property",
+      "rdfs:comment": "How frequent is the new version of the dataset released (monthly, quarterly, etc)",
+      "rdfs:label": "release_frequency",
+      "schema:domainIncludes": {
+        "@id": "n3c:Dataset"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "n3c:documentation",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Provide the URL to the detailed documentation about the dataset",
+      "rdfs:label": "documentation",
       "schema:domainIncludes": {
         "@id": "n3c:Dataset"
       },
@@ -1477,289 +557,16 @@
       }
     },
     {
-      "@id": "n3c:citedBy",
+      "@id": "n3c:funding",
       "@type": "rdf:Property",
-      "rdfs:comment": "Associated resource that utilized or was derived from this dataset.",
-      "rdfs:label": "citedBy",
-      "owl:cardinality": "many",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "owl:inverseOf: schema:isBasedOn"
-      },
+      "rdfs:comment": "Funding for the generation of the dataset",
+      "rdfs:label": "funding",
       "schema:domainIncludes": {
         "@id": "n3c:Dataset"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:MonetaryGrant"
       }
-    },
-    {
-      "@id": "n3c:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "name of the resource utilize or was derived from this dataset",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:identifier",
-      "@type": "rdf:Property",
-      "rdfs:comment": "identifier for this resource which utilized or was derived from this dataset",
-      "rdfs:label": "identifier",
-      "owl:cardinality": "one",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:identifier"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:isBasedOn",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Associated resource from which this dataset was derived",
-      "rdfs:label": "isBasedOn",
-      "owl:cardinality": "many",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:isBasedOn"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "n3c:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "name of the associated resource from which this dataset was derived",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:identifier",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Identifier for the resource",
-      "rdfs:label": "identifier",
-      "owl:cardinality": "one",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:identifier"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:relatedTo",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Other resources related to, but not a derivative of nor derived from this dataset",
-      "rdfs:label": "relatedTo",
-      "owl:cardinality": "many",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:relatedTo"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "n3c:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "name of related resource",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:identifier",
-      "@type": "rdf:Property",
-      "rdfs:comment": "identifier (if available) of related resource",
-      "rdfs:label": "identifier",
-      "owl:cardinality": "one",
-      "marginality": "optional",
-      "rdfs:sameAs": {
-        "@id": "schema:identifier"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:topicCategory",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Applicable category",
-      "rdfs:label": "topicCategory",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:about"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:keywords",
-      "@type": "rdf:Property",
-      "rdfs:comment": "keywords",
-      "rdfs:label": "keywords",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:keywords"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:curatedBy",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The source from which this dataset was identified for inclusion. Provides provenance for a resource which was curated by another",
-      "rdfs:label": "curatedBy",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:citation"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "n3c:Dataset"
-        },
-        {
-          "@id": "n3c:Person"
-        },
-        {
-          "@id": "n3c:Organization"
-        },
-        {
-          "@id": "schema:Thing"
-        }
-      ]
-    },
-    {
-      "@id": "n3c:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "name of the source from which this dataset was identified for inclusion",
-      "rdfs:label": "name",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:name"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "n3c:Dataset"
-        },
-        {
-          "@id": "n3c:Person"
-        },
-        {
-          "@id": "n3c:Organization"
-        },
-        {
-          "@id": "schema:Thing"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "n3c:curationDate",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The date this resource was added or updated in N3C",
-      "rdfs:label": "curationDate",
-      "owl:cardinality": "one",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:releaseDate"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Date"
-      }
-    },
-    {
-      "@id": "n3c:includedInDataCatalog",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The source from which this dataset was identified for inclusion. Provides provenance for a resource which was curated by another",
-      "rdfs:label": "includedInDataCatalog",
-      "owl:cardinality": "many",
-      "marginality": "recommended",
-      "rdfs:sameAs": {
-        "@id": "schema:includedInDataCatalog"
-      },
-      "schema:domainIncludes": {
-        "@id": "n3c:Dataset"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:DataCatalog"
-        },
-        {
-          "@id": "n3c:Dataset"
-        },
-        {
-          "@id": "schema:Thing"
-        }
-      ]
     }
   ]
 }
