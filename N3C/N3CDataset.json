@@ -73,12 +73,35 @@
             "type": "string"
           },
           "contain_geo_codes": {
-            "description": "Does the dataset contains GEO codes (e.g. zip codes)?",
+            "description": "Does the dataset contains GEO codes (e.g. zip codes, addresses, or other geo coordinates (latitude, longitude)?",
             "type": "boolean"
           },
           "contain_phi": {
             "description": "Does the dataset contains Protected health information (PHI)?",
             "type": "boolean"
+          },
+          "domain_team_relevance": {
+            "description": "Does the dataset intend to use in an existing domain team?",
+            "type": "string",
+            "enum": [
+              "General use",
+              "Acute Kidney Injury (AKI)",
+              "Applicable Data Methods Standards (ADMS)",
+              "Critical Care/Ventilation/MODS",
+              "Diabetes/Obesity",
+              "Elder impact",
+              "Emergency Serivces or Medicine",
+              "Imaging",
+              "Immuno-suppressed/compromised (ISC)",
+              "Oncology",
+              "Peds",
+              "Pregnancy",
+              "SDoH - Social Determinits of Health",
+              "Short/Long term complications",
+              "Pharmacoepidemiology",
+              "Pharma-commercial",
+              "Other - describe in justification text"
+            ]
           },
           "justification": {
             "description": "How is the dataset relevant to the N3C project, why does the community want and how can it be used?",
@@ -489,6 +512,18 @@
       "@type": "rdf:Property",
       "rdfs:comment": "Specify the cost to obtain the dataset, \"Free\", \"Subscription\" or others",
       "rdfs:label": "cost",
+      "schema:domainIncludes": {
+        "@id": "n3c:Dataset"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "n3c:domain_team_relevance",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Does the dataset intend to use in an existing domain team?",
+      "rdfs:label": "domain_team_relevance",
       "schema:domainIncludes": {
         "@id": "n3c:Dataset"
       },
