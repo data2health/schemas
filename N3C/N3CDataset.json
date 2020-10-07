@@ -223,6 +223,7 @@
           "identifier",
           "contain_geo_codes",
           "contain_phi",
+          "domain_team_relevance",
           "justification"
         ],
         "definitions": {
