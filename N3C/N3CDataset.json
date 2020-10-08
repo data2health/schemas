@@ -56,7 +56,7 @@
             ]
           },
           "license": {
-            "description": "A license document that applies to this content, typically indicated by a URL.",
+            "description": "A license document that applies to this content, typically indicated by a URL",
             "type": "string"
           },
           "cost": {
@@ -274,7 +274,7 @@
                 "type": "string"
               },
               "alternateName": {
-                "description": "Alternate name or Acronym for the organization.",
+                "description": "Alternate name or Acronym for the organization",
                 "type": "string"
               }
             },
@@ -290,49 +290,10 @@
               "name": {
                 "type": "string"
               },
-              "givenName": {
-                "type": "string"
-              },
-              "familyName": {
-                "type": "string"
-              },
               "orcid": {
-                "type": "string"
-              },
-              "affiliation": {
-                "oneOf": [
-                  {
-                    "$ref": "#/definitions/baseOrgObject"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/baseOrgObject"
-                    }
-                  }
-                ]
-              }
-            },
-            "required": [
-              "name"
-            ]
-          },
-          "memberObject": {
-            "description": "Reusable person definition accounting for recursion issues in DDE",
-            "@type": "Person",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "givenName": {
-                "type": "string"
-              },
-              "familyName": {
-                "type": "string"
-              },
-              "orcid": {
-                "type": "string"
+                "description": "Enter your ORCID ID (https://orcid.org/xxxx-xxxx-xxxx-xxxx)",
+                "type": "string",
+                "pattern": "https:\\/\\/orcid\\.org\\/\\d{4}-\\d{4}-\\d{4}-\\d{4}"
               },
               "affiliation": {
                 "oneOf": [
@@ -358,26 +319,20 @@
             "type": "object",
             "properties": {
               "name": {
+                "description": "name of the organization",
                 "type": "string"
               },
               "alternateName": {
+                "description": "Alternate name or Acronym for the organization",
                 "type": "string"
+              },
+              "url": {
+                "description": "The url to the organization",
+                "type": "string",
+                "format": "uri"
               },
               "affiliation": {
                 "$ref": "#/definitions/baseOrgObject"
-              },
-              "members": {
-                "oneOf": [
-                  {
-                    "$ref": "#/definitions/memberObject"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/memberObject"
-                    }
-                  }
-                ]
               }
             },
             "required": [
@@ -443,7 +398,7 @@
                 "type": "string"
               },
               "url": {
-                "description": "The url of the resource cited.",
+                "description": "The url of the resource cited",
                 "type": "string",
                 "format": "uri"
               },
