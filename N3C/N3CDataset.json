@@ -82,25 +82,16 @@
           },
           "domain_team_relevance": {
             "description": "Does the dataset intend to use in an existing domain team?",
-            "type": "string",
-            "enum": [
-              "General use",
-              "Acute Kidney Injury (AKI)",
-              "Applicable Data Methods Standards (ADMS)",
-              "Critical Care/Ventilation/MODS",
-              "Diabetes/Obesity",
-              "Elder impact",
-              "Emergency Serivces or Medicine",
-              "Imaging",
-              "Immuno-suppressed/compromised (ISC)",
-              "Oncology",
-              "Peds",
-              "Pregnancy",
-              "SDoH - Social Determinits of Health",
-              "Short/Long term complications",
-              "Pharmacoepidemiology",
-              "Pharma-commercial",
-              "Other - describe in justification text"
+            "oneOf": [
+              {
+                "$ref": "#/definitions/domain_team"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/domain_team"
+                }
+              }
             ]
           },
           "justification": {
@@ -113,7 +104,8 @@
           },
           "contact": {
             "description": "Provide an email contact",
-            "type": "string"
+            "type": "string",
+            "format": "email"
           },
           "documentation": {
             "description": "Provide the URL to the detailed documentation about the dataset",
@@ -410,6 +402,28 @@
             },
             "required": [
               "name"
+            ]
+          },
+          "domain_team": {
+            "type": "string",
+            "enum": [
+              "General use",
+              "Acute Kidney Injury (AKI)",
+              "Applicable Data Methods Standards (ADMS)",
+              "Critical Care/Ventilation/MODS",
+              "Diabetes/Obesity",
+              "Elder impact",
+              "Emergency Serivces or Medicine",
+              "Imaging",
+              "Immuno-suppressed/compromised (ISC)",
+              "Oncology",
+              "Peds",
+              "Pregnancy",
+              "SDoH - Social Determinits of Health",
+              "Short/Long term complications",
+              "Pharmacoepidemiology",
+              "Pharma-commercial",
+              "Other - describe in justification text"
             ]
           },
           "inclusionObject": {
