@@ -5,7 +5,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "schema": "http://schema.org/",
-    "n3c": "http://discovery.biothings.io/"
+    "n3c": "http://discovery.biothings.io/view/n3c/"
   },
   "@id": "https://discovery.biothings.io/view/n3c/",
   "@graph": [
@@ -223,6 +223,7 @@
           "identifier",
           "contain_geo_codes",
           "contain_phi",
+          "domain_team_relevance",
           "justification"
         ],
         "definitions": {
