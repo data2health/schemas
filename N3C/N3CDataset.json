@@ -280,13 +280,16 @@
             "@type": "Person",
             "type": "object",
             "properties": {
+              "@type": {
+                "const": "Person"
+              },
               "name": {
                 "type": "string"
               },
               "orcid": {
                 "description": "Enter your ORCID ID (https://orcid.org/xxxx-xxxx-xxxx-xxxx)",
                 "type": "string",
-                "pattern": "https:\\/\\/orcid\\.org\\/\\d{4}-\\d{4}-\\d{4}-\\d{4}"
+                "pattern": "^https:\\/\\/orcid\\.org\\/\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
               },
               "affiliation": {
                 "oneOf": [
@@ -311,6 +314,9 @@
             "@type": "Organization",
             "type": "object",
             "properties": {
+              "@type": {
+                "const": "Organization"
+              },
               "name": {
                 "description": "name of the organization",
                 "type": "string"
@@ -323,9 +329,6 @@
                 "description": "The url to the organization",
                 "type": "string",
                 "format": "uri"
-              },
-              "affiliation": {
-                "$ref": "#/definitions/baseOrgObject"
               }
             },
             "required": [
