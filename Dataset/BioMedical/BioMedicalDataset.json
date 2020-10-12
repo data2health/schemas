@@ -71,7 +71,7 @@
             "type": "string"
           },
           "identifier": {
-            "description": "The identifier of the dataset if available, e.g. ID from repositories GEO, EGA.",
+            "description": "Provide the identifier of the dataset, e.g. ID from repositories GEO, EGA.",
             "type": "string"
           },
           "measurementTechnique": {
@@ -199,7 +199,7 @@
         ],
         "definitions": {
           "person": {
-            "description": "Reusable person definition",
+            "$comment": "Reusable person definition",
             "@type": "Person",
             "type": "object",
             "properties": {
