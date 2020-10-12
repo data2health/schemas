@@ -83,7 +83,7 @@
             ]
           },
           "creator": {
-            "description": "The creater (often the primary contact) of this dataset.",
+            "description": "The creator (often the primary contact) of this dataset.",
             "$ref": "#/definitions/person"
           },
           "contributor": {
