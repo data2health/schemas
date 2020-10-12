@@ -69,7 +69,7 @@
             "format": "uri"
           },
           "identifier": {
-            "description": "identifier for the dataset in a shared repository (GEO, Zenodo, figshare, etc)",
+            "description": "Identifier for the dataset’s record in a shared registry or repository (Re3Data, GEO, Zenodo, figshare, etc)",
             "type": "string"
           },
           "contain_geo_codes": {
@@ -81,7 +81,7 @@
             "type": "boolean"
           },
           "domain_team_relevance": {
-            "description": "Does the dataset intend to use in an existing domain team?",
+            "description": "For which domain teams is this dataset relevant; if not limited to specific domains select \"General use\"",
             "oneOf": [
               {
                 "$ref": "#/definitions/domain_team"
@@ -434,10 +434,11 @@
             "type": "object",
             "properties": {
               "name": {
-                "const": "N3C Datasets"
+                "type": "string"
               },
               "url": {
-                "const": "https://ncats.nih.gov/n3c/"
+                "type": "string",
+                "format": "uri"
               }
             }
           }
