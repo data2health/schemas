@@ -69,7 +69,7 @@
             "format": "uri"
           },
           "identifier": {
-            "description": "Identifier for the dataset’s record in a shared registry or repository (Re3Data, GEO, Zenodo, figshare, etc)",
+            "description": "Identifier for the dataset’s record in a shared registry or repository (Re3Data, GEO, Zenodo, figshare, etc). If currently not available, please re-enter the URL above",
             "type": "string"
           },
           "contain_geo_codes": {
@@ -77,8 +77,8 @@
             "type": "boolean"
           },
           "contain_phi": {
-            "description": "Does the dataset contains Protected health information (PHI)?",
-            "type": "boolean"
+            "description": "Do you know if the information in this dataset could be used to identify individuals? If so, where could we find out more about that potential use of the data? Otherwise, enter \"No\"",
+            "type": "string"
           },
           "domain_team_relevance": {
             "description": "For which domain teams is this dataset relevant; if not limited to specific domains select \"General use\"",
@@ -460,13 +460,13 @@
     {
       "@id": "n3c:contain_phi",
       "@type": "rdf:Property",
-      "rdfs:comment": "Does the dataset contains Protected health information (PHI)?",
+      "rdfs:comment": "Does the dataset contains Protected health information (PHI)? If so, provide more info, otherwise, enter No",
       "rdfs:label": "contain_phi",
       "schema:domainIncludes": {
         "@id": "n3c:Dataset"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Boolean"
+        "@id": "schema:Text"
       }
     },
     {
