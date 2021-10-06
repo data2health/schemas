@@ -64,7 +64,7 @@
             "type": "string"
           },
           "url": {
-            "description": "The main URL about the dataset",
+            "description": "The main URL about the dataset (direct link to downloadable data file(s) is preferred)",
             "type": "string",
             "format": "uri"
           },
