@@ -5,9 +5,9 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "schema": "http://schema.org/",
-    "n3c": "http://discovery.biothings.io/view/n3c/"
+    "n3c": "http://discovery.biothings.io/ns/n3c/"
   },
-  "@id": "https://discovery.biothings.io/view/n3c/",
+  "@id": "https://discovery.biothings.io/ns/n3c/",
   "@graph": [
     {
       "@id": "n3c:Dataset",
@@ -18,7 +18,7 @@
         "@id": "schema:Dataset"
       },
       "schema:isPartOf": {
-        "@id": "https://discovery.biothings.io/view/n3c/"
+        "@id": "https://discovery.biothings.io/ns/n3c/"
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
